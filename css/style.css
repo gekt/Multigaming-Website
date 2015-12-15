@@ -6,7 +6,7 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    /*background-image: url("../img/bg.jpg");*/
+    background-color: white;
 }
 
 .contenu_page {
@@ -21,6 +21,8 @@ html, body {
     margin-bottom: 20px;
     height: 200px;
     background-color: rgb(50, 50, 50);
+    box-shadow: 0px 2px 5px 0px;
+    border-bottom: 3px solid #E12A2A;
 }
 
 /* --------------------------------[ ESPACE MEMBRE ]--------------------------------*/
@@ -32,7 +34,10 @@ html, body {
     float: left;
     display: inline-block;
     border-radius: 5px;
-    background-color: rgb(0, 120, 120);
+    background-color: rgb(40, 40, 40);
+    -webkit-box-shadow: 0px 0px 11px 4px rgba(20,18,16,0.72);
+    -moz-box-shadow: 0px 0px 11px 4px rgba(20,18,16,0.72);
+    box-shadow: 0px 0px 11px 4px rgba(20,18,16,0.72);
 }
 
 /* --------------------------------[ SLIDER SERVEUR INFOS ]--------------------------------*/
@@ -42,6 +47,9 @@ html, body {
     margin-right: 20px;
     height: 680px;
     border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 11px 4px rgba(20,18,16,0.72);
+    -moz-box-shadow: 0px 0px 11px 4px rgba(20,18,16,0.72);
+    box-shadow: 0px 0px 11px 4px rgba(20,18,16,0.72);
     /*background-color: rgb(120, 0, 0);*/
 }
 
@@ -58,27 +66,12 @@ html, body {
 }
 
 .footer {
-    background-color: rgb(100, 100, 100);
+    background-color: rgb(50, 50, 50);
+    text-align: center;
 }
 
 .footer, .pour_le_footer:after {
   height: 30px; /* FOOTER : A CHANGER EN MEME TEMPS */
-}
-
-/* --------------------------------[ VIDEO BG ]--------------------------------*/
-
-video { 
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -100;
-    transform: translateX(-50%) translateY(-50%);
-    background-size: cover;
-    transition: 1s opacity;
 }
 
 /* --------------------------------[ TEST SLIDER ]--------------------------------*/
@@ -87,10 +80,11 @@ video {
   position: absolute;
   margin-top: 0;
   padding-left: 0;
-  background-color: #ddd; 
+  background-color: #959595;
   color: #888; 
   list-style:none;
   text-align: center;
+  border-radius: 5px 0px 0px 5px;
 }
 
 #choose_server #buttons li {
@@ -100,26 +94,27 @@ video {
 #choose_server #buttons a {
   height: 170px;
   text-decoration: none;
-  color: #888;
+  color: white;
   display: block;
   transition: background-color ease .2s;
 }
 
-#choose_server #buttons a:hover { background-color:#eee; }
+#choose_server #buttons a:hover { background-color: #BFC0C0; color: black; border-radius: 5px 0px 0px 5px; }
 #choose_server #buttons a.selected { 
-  color: black;
+  color: white;
   background: url("../img/arrow.png") no-repeat right;
-  background-color: #FDE9F0;
+  background-color: #666767;
+  border-radius: 5px 0px 0px 5px;
 }
 
-#choose_server #buttons a.selected:hover { background-color:#FDE9F0; }
+#choose_server #buttons a.selected:hover { background-color: #666767; }
 
 #choose_server .infobox {
   margin-left: 250px;
   /*width: 500px;*/
   height: 668px;
   padding-bottom: 12px;
-  background-color: rgba(253, 233, 240, 0.75);
+  background-color: rgb(40, 40, 40);
   display: none;
   overflow: auto;
   overflow-x: hidden;
@@ -161,21 +156,22 @@ ul#tabs {
 
 ul#tabs li {
     display: inline-block;
-    background-color: #32c896;
-    border-bottom: solid 5px #238b68;
+    background-color: #E12A2A;
+    border-bottom: solid 5px #B2B2B1;
     width: 25.05%;
     height: 50px;
     margin-bottom: 4px;
     margin-left: -2px;
     margin-right: -2px;
-    color: #fff;
+    color: rgba(40, 40, 40);
+    font-weight : bolder;
     cursor: pointer;
     line-height: 50px;
     text-align: center;
 }
 
-ul#tabs li:hover { background-color: #238b68; }
-ul#tabs li.active { background-color: #238b68; }
+ul#tabs li:hover { opacity: 0.8; border-bottom: solid 5px white; }
+ul#tabs li.active { opacity: 0.8; border-bottom: solid 5px white; color: white; }
 
 ul#tab {
     list-style-type: none;
@@ -194,5 +190,135 @@ ul#tab li h2 {
     font-weight: 400;
     margin-bottom: 30px;
     padding-bottom: 5px;
-    border-bottom: solid 5px #32c896;
+    border-bottom: solid 5px #E12A2A;
+}
+
+/* --------------------------------[ MENU - CONNEXION ]--------------------------------*/
+
+.connect_pseudo{
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: #E12A2A;
+    margin-left: 40px;
+    margin-right: 40px;
+    border-radius: 5px;
+    padding: 4%;
+    -webkit-box-shadow: 0px 0px 8px 2px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 0px 8px 2px rgba(0,0,0,1);
+    box-shadow: 0px 0px 8px 2px rgba(0,0,0,1);
+}
+
+.connect_pseudo_input, .connect_mdp_input{
+    text-align: center;
+    margin-left: 14.5px;
+    margin-top: 0px;
+}
+
+.connect_bouton, .register_bouton{
+    margin-left: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    -webkit-box-shadow: 0px 0px 8px 2px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 0px 8px 2px rgba(0,0,0,1);
+    box-shadow: 0px 0px 8px 2px rgba(0,0,0,1);
+}
+
+.connect {
+    border: solid 1px black;
+    border-radius: 5px;
+    margin: 15px;
+    background-color: #959595;
+    -webkit-box-shadow: inset 0px 0px 8px 2px rgba(0,0,0,1);
+    -moz-box-shadow: inset 0px 0px 8px 2px rgba(0,0,0,1);
+    box-shadow: inset 0px 0px 8px 2px rgba(0,0,0,1);
+}
+
+input[type="submit"], input[type="button"] {
+    background: #E12A2A;
+    border: 0;
+    padding: 4%;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background .3s;
+    -webkit-transition: background .3s;
+    text-decoration: none;
+}
+
+input[type="submit"]:, input[type="button"]:select {
+    text-decoration: none;
+}
+
+input[type="submit"]:hover, input[type="button"]:hover {
+    opacity: 0.8;
+
+  }
+
+input[type="text"], input[type="password"] {
+    background: white;
+    margin-bottom: 4%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 4%;
+    color: #555;
+}
+
+/* --------------------------------[ MENU - INSCRIPTION ]--------------------------------*/
+
+
+#inscription{
+    border: solid 1px black;
+    border-radius: 5px;
+    margin: 15px;
+    margin-top: 25px;
+    background-color: #959595;
+    -webkit-box-shadow: inset 0px 0px 8px 2px rgba(0,0,0,1);
+    -moz-box-shadow: inset 0px 0px 8px 2px rgba(0,0,0,1);
+    box-shadow: inset 0px 0px 8px 2px rgba(0,0,0,1);
+  }
+
+  #triangle {
+    width: 0;
+    border-top: 12x solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid #E12A2A;
+    border-left: 12px solid transparent;
+    margin: 0 auto;
+    margin-top: -14px;
+}
+
+.INSCRIPTION_INSCRIPTION {
+        color: white;
+    font-weight: bolder;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: #E12A2A;
+    margin-left: 40px;
+    margin-right: 40px;
+    border-radius: 5px;
+    padding: 4%;
+    -webkit-box-shadow: 0px 0px 8px 2px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 0px 8px 2px rgba(0,0,0,1);
+    box-shadow: 0px 0px 8px 2px rgba(0,0,0,1);
+
+}
+
+.inscription_pseudo, .inscription_mdp, .inscription_mdp_confirm {
+        text-align: center;
+    margin-left: 14.5px;
+    margin-top: 0px;    
+
+}
+
+.inscription_confirm {
+    margin-left: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    -webkit-box-shadow: 0px 0px 8px 2px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 0px 8px 2px rgba(0,0,0,1);
+    box-shadow: 0px 0px 8px 2px rgba(0,0,0,1);
 }
