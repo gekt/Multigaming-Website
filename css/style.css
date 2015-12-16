@@ -12,7 +12,16 @@ html, body {
 }
 
 .contenu_page {
+    padding-bottom: 4px;
+}
 
+@media screen and (min-height: 900px) {
+    .contenu_page {
+        position: absolute;
+        width: 100%;
+        top: calc(50% + 151px);
+        transform: translate(0, calc(-50% - 85px));
+    }
 }
 
 /* --------------------------------[ BANNIERE ]--------------------------------*/
@@ -53,7 +62,7 @@ html, body {
 
 .pour_le_footer {
   min-height: 100%;
-  margin-bottom: -40px; /* FOOTER : A CHANGER EN MEME TEMPS */
+  margin-bottom: -50px; /* FOOTER : A CHANGER EN MEME TEMPS */
 }
 
 .pour_le_footer:after {
@@ -67,7 +76,7 @@ html, body {
 }
 
 .footer, .pour_le_footer:after {
-    margin-top: 10px;
+    margin-top: 20px;
     height: 30px; /* FOOTER : A CHANGER EN MEME TEMPS */
 }
 

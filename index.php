@@ -11,24 +11,8 @@ include 'include/inscription.php';
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <script src="//code.jquery.com/jquery-1.10.2.js"></script>
         <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-        <script src="js/tabs.js"></script>    
-        <script language="JavaScript" type="text/javascript">
-            function selectTab(num) {
-              for (var i=1; i <= 4; i++) {
-                document.getElementById("tab" + i).className = "";
-                document.getElementById("box" + i).className = "infobox";
-              }
-              document.getElementById("tab" + num).className = "selected";
-              document.getElementById("box" + num).className = "infobox enabled";
-            }
-        </script>
-        <script>
-        $(document).ready(function(){
-            $("#bouton_toggle").click(function(){
-                $("#inscription_toggle").toggle();
-            });
-        });
-        </script>
+        <script src="js/tabs.js"></script>
+        <script src="js/index.js"></script>
     </head>
     <body onload="selectTab(1);">
         <div class="pour_le_footer">
