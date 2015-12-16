@@ -1,5 +1,6 @@
 @font-face {
-
+font-family: 'champagne';
+src: url('../font/champagne.ttf');
 }
 
 html, body {
@@ -7,22 +8,24 @@ html, body {
     margin: 0;
     padding: 0;
     background-color: white;
+    background-image: url("../img/bg.jpg");
 }
 
 .contenu_page {
-    padding-bottom: 20px;
-    margin-top: 4%;
-    margin-bottom: 3%;
+
 }
 
 /* --------------------------------[ BANNIERE ]--------------------------------*/
 
 .banniere_img {
     margin-bottom: 20px;
-    height: 200px;
+    height: 150px;
     background-color: rgb(50, 50, 50);
     box-shadow: 0px 2px 5px 0px;
-    border-bottom: 3px solid #E12A2A;
+    border-bottom: 1px solid #000000;
+    background: url("../img/banniere2.jpg") no-repeat center;
+    background-size: cover;
+    background-attachment: inherit;
 }
 
 /* --------------------------------[ ESPACE MEMBRE ]--------------------------------*/
@@ -30,14 +33,12 @@ html, body {
 .menu {
     margin-left: 20px;
     height: 680px;
-    width: 250px;
+    width: 248px;
     float: left;
     display: inline-block;
-    border-radius: 5px;
-    background-color: rgb(40, 40, 40);
-    -webkit-box-shadow: 0px 0px 11px 4px rgba(20,18,16,0.72);
-    -moz-box-shadow: 0px 0px 11px 4px rgba(20,18,16,0.72);
-    box-shadow: 0px 0px 11px 4px rgba(20,18,16,0.72);
+    border-radius: 2px;
+    border: 2px solid rgba(160, 160, 160, 1);
+    background-color: rgba(80, 80, 80, 0.50);
 }
 
 /* --------------------------------[ SLIDER SERVEUR INFOS ]--------------------------------*/
@@ -46,18 +47,13 @@ html, body {
     margin-left: 290px;
     margin-right: 20px;
     height: 680px;
-    border-radius: 5px;
-    -webkit-box-shadow: 0px 0px 11px 4px rgba(20,18,16,0.72);
-    -moz-box-shadow: 0px 0px 11px 4px rgba(20,18,16,0.72);
-    box-shadow: 0px 0px 11px 4px rgba(20,18,16,0.72);
-    /*background-color: rgb(120, 0, 0);*/
 }
 
 /* --------------------------------[ FOOTER ]--------------------------------*/
 
 .pour_le_footer {
   min-height: 100%;
-  margin-bottom: -30px; /* FOOTER : A CHANGER EN MEME TEMPS */
+  margin-bottom: -40px; /* FOOTER : A CHANGER EN MEME TEMPS */
 }
 
 .pour_le_footer:after {
@@ -71,20 +67,21 @@ html, body {
 }
 
 .footer, .pour_le_footer:after {
-  height: 30px; /* FOOTER : A CHANGER EN MEME TEMPS */
+    margin-top: 10px;
+    height: 30px; /* FOOTER : A CHANGER EN MEME TEMPS */
 }
 
 /* --------------------------------[ TEST SLIDER ]--------------------------------*/
 
 #choose_server #buttons { 
-  position: absolute;
+  float: right;
   margin-top: 0;
   padding-left: 0;
   background-color: #959595;
   color: #888; 
   list-style:none;
   text-align: center;
-  border-radius: 5px 0px 0px 5px;
+  border: 2px solid rgba(160, 160, 160, 1);
 }
 
 #choose_server #buttons li {
@@ -99,39 +96,28 @@ html, body {
   transition: background-color ease .2s;
 }
 
-#choose_server #buttons a:hover { background-color: #BFC0C0; color: black; border-radius: 5px 0px 0px 5px; }
+#choose_server #buttons a:hover { background-color: #BFC0C0; color: black; }
 #choose_server #buttons a.selected { 
   color: white;
-  background: url("../img/arrow.png") no-repeat right;
+  background: url("../img/arrow.png") no-repeat left;
   background-color: #666767;
-  border-radius: 5px 0px 0px 5px;
 }
 
 #choose_server #buttons a.selected:hover { background-color: #666767; }
 
 #choose_server .infobox {
-  margin-left: 250px;
-  /*width: 500px;*/
-  height: 668px;
-  padding-bottom: 12px;
-  background-color: rgb(40, 40, 40);
+  margin-right: 270px;
+  height: 680px;
+  background-color: rgba(80, 80, 80, 0.50);
+  border: 2px solid rgba(160, 160, 160, 1);
   display: none;
-  overflow: auto;
-  overflow-x: hidden;
 }
 
 #choose_server .enabled {
   display: block;
-  border-radius: 0 3px 3px 0;
-  /*box-shadow: 3px 3px 2px 2px rgba(102,102,102,0.81);*/
 }
 
 #choose_server .infobox ul { padding-left:0px; }
-
-div .scroll {
-  overflow: auto;
-  height: 300px;
-}
 
 span.valign {
   width: 120px;
@@ -140,38 +126,74 @@ span.valign {
   display: inline-block;
   line-height: 1.2;
   text-align: center;
+  font-family: 'champagne';
+  color: white;
+}
+
+div.scrollbar {
+  overflow: auto;
+  max-height: 590px;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
 }
 
 /* --------------------------------[ TEST TAB INSLIDER ]--------------------------------*/
 
 ul#tabs {
     list-style-type: none;
-    margin: 0 0 30px 0;
+    margin-left: 2px;
     padding: 0;
+    font-family: 'champagne';
+    color: white;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
 }
 
-@media screen and (min-width: 2609px) {
-    ul#tabs li { width: 25% !important; }
+@media screen and (min-width: 1846px) {
+    ul#tabs li { width: 25.04% !important; }
+}
+
+@media screen and (min-width: 2159px) {
+    ul#tabs li { width: 25.03% !important; }
+}
+
+@media screen and (min-width: 2680px) {
+    ul#tabs li { width: 25.02% !important; }
+}
+
+@media screen and (max-width: 1363px) {
+    ul#tabs li { width: 25.08% !important; }
 }
 
 ul#tabs li {
     display: inline-block;
-    background-color: #E12A2A;
-    border-bottom: solid 5px #B2B2B1;
+    background-color: rgba(82, 82, 82, 0.5);
+    border-bottom: solid 2px rgba(160, 160, 160, 1);
     width: 25.05%;
     height: 50px;
     margin-bottom: 4px;
     margin-left: -2px;
     margin-right: -2px;
-    color: rgba(40, 40, 40);
     font-weight : bolder;
     cursor: pointer;
     line-height: 50px;
     text-align: center;
 }
 
-ul#tabs li:hover { opacity: 0.8; border-bottom: solid 5px white; }
-ul#tabs li.active { opacity: 0.8; border-bottom: solid 5px white; color: white; }
+ul#tabs li:hover { opacity: 0.8; border-bottom: solid 2px white; }
+ul#tabs li.active { opacity: 0.8; border-bottom: solid 2px white; color: white; }
 
 ul#tab {
     list-style-type: none;
@@ -195,130 +217,162 @@ ul#tab li h2 {
 
 /* --------------------------------[ MENU - CONNEXION ]--------------------------------*/
 
-.connect_pseudo{
+.connect_text{
     color: white;
     font-weight: bolder;
     text-align: center;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    background-color: #E12A2A;
-    margin-left: 40px;
-    margin-right: 40px;
-    border-radius: 5px;
-    padding: 4%;
-    -webkit-box-shadow: 0px 0px 8px 2px rgba(0,0,0,1);
-    -moz-box-shadow: 0px 0px 8px 2px rgba(0,0,0,1);
-    box-shadow: 0px 0px 8px 2px rgba(0,0,0,1);
+    margin: 15px 40px;
+    font-family: 'champagne';
+    font-size: 24px;
 }
 
-.connect_pseudo_input, .connect_mdp_input{
-    text-align: center;
-    margin-left: 14.5px;
-    margin-top: 0px;
+.connect_pseudo_input, .connect_mdp_input, .connect_bouton, .register_bouton {
+    font-family: 'champagne';
+    font-size: 18px;
 }
 
-.connect_bouton, .register_bouton{
+.connect_pseudo_input, .connect_mdp_input {
     margin-left: 20px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    -webkit-box-shadow: 0px 0px 8px 2px rgba(0,0,0,1);
-    -moz-box-shadow: 0px 0px 8px 2px rgba(0,0,0,1);
-    box-shadow: 0px 0px 8px 2px rgba(0,0,0,1);
+    margin-top: 5px;
 }
 
-.connect {
-    border: solid 1px black;
-    border-radius: 5px;
-    margin: 15px;
-    background-color: #959595;
-    -webkit-box-shadow: inset 0px 0px 8px 2px rgba(0,0,0,1);
-    -moz-box-shadow: inset 0px 0px 8px 2px rgba(0,0,0,1);
-    box-shadow: inset 0px 0px 8px 2px rgba(0,0,0,1);
+.connect_bouton, .register_bouton {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-input[type="submit"], input[type="button"] {
-    background: #E12A2A;
+.connexion input[type="submit"], .connexion input[type="button"] {
     border: 0;
-    padding: 4%;
+    width: 110px;
+    padding: 12px;
     color: #fff;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 8px;
     transition: background .3s;
     -webkit-transition: background .3s;
-    text-decoration: none;
+    outline: none;
 }
 
-input[type="submit"]:, input[type="button"]:select {
-    text-decoration: none;
+.connexion input[type="submit"] {
+    box-shadow: 0 3px rgba(14, 73, 103, 0.75);
+    background-color: rgb(29, 161, 226);
+    margin-left: 10px;
+    transition: box-shadow ease .1s;
 }
 
-input[type="submit"]:hover, input[type="button"]:hover {
-    opacity: 0.8;
+.connexion input[type="submit"]:hover {
+    box-shadow: 0 2px rgba(14, 73, 103, 0.75);
+    transform: translateY(2px);
+}
 
-  }
+.connexion input[type="submit"]:active {
+    box-shadow: 0px 0px rgba(14, 73, 103, 0);
+    transform: translateY(3px);
+}
+
+.connexion input[type="button"] {
+    box-shadow: 0 3px rgba(24, 80, 6, 0.75);
+    background-color: rgb(49, 171, 11);
+    float: right;
+    margin-right: 10px;
+    transition: box-shadow ease .1s;
+}
+
+.connexion input[type="button"]:hover {
+    box-shadow: 0 2px rgba(24, 80, 6, 0.75);
+    transform: translateY(2px);
+}
+
+.connexion input[type="button"]:active {
+    box-shadow: 0px 0px rgba(24, 80, 6, 0);
+    transform: translateY(3px);
+}
 
 input[type="text"], input[type="password"] {
     background: white;
-    margin-bottom: 4%;
-    border-radius: 5px;
+    margin-bottom: 8px;
+    border-radius: 12px;
     border: 1px solid #ccc;
-    padding: 4%;
+    border: 2px solid transparent;
+    padding: 12px;
+    padding-left: 45px;
+    width: 145px;
     color: #555;
+    outline: none;
+    transition: border-color ease .3s;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: rgb(27, 136, 189);
+}
+
+div.txt {
+    position: relative;
+}
+
+div.txt img {
+    position: absolute;
+    left: 34px;
+    top: 18px;
+    width: 20px;
 }
 
 /* --------------------------------[ MENU - INSCRIPTION ]--------------------------------*/
 
-
-#inscription{
-    border: solid 1px black;
-    border-radius: 5px;
-    margin: 15px;
-    margin-top: 25px;
-    background-color: #959595;
-    -webkit-box-shadow: inset 0px 0px 8px 2px rgba(0,0,0,1);
-    -moz-box-shadow: inset 0px 0px 8px 2px rgba(0,0,0,1);
-    box-shadow: inset 0px 0px 8px 2px rgba(0,0,0,1);
-  }
-
-  #triangle {
-    width: 0;
-    border-top: 12x solid transparent;
-    border-right: 12px solid transparent;
-    border-bottom: 12px solid #E12A2A;
-    border-left: 12px solid transparent;
-    margin: 0 auto;
-    margin-top: -14px;
-}
-
-.INSCRIPTION_INSCRIPTION {
-        color: white;
+.inscription {
+    color: white;
     font-weight: bolder;
     text-align: center;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    background-color: #E12A2A;
-    margin-left: 40px;
-    margin-right: 40px;
-    border-radius: 5px;
-    padding: 4%;
-    -webkit-box-shadow: 0px 0px 8px 2px rgba(0,0,0,1);
-    -moz-box-shadow: 0px 0px 8px 2px rgba(0,0,0,1);
-    box-shadow: 0px 0px 8px 2px rgba(0,0,0,1);
+    margin: 15px 40px;
+    font-family: 'champagne';
+    font-size: 24px;
+}
 
+.inscription_mdp_confirm::-webkit-input-placeholder {
+    font-size: 14px;
+}
+
+.inscription_mdp_confirm::-moz-placeholder {
+    font-size: 14px;
+}
+
+.inscription_mdp_confirm:-ms-input-placeholder {
+    font-size: 14px;
 }
 
 .inscription_pseudo, .inscription_mdp, .inscription_mdp_confirm {
-        text-align: center;
-    margin-left: 14.5px;
-    margin-top: 0px;    
+    font-family: 'champagne';
+    font-size: 18px;
+    margin-left: 20px;
+    margin-top: 5px;    
 
 }
 
 .inscription_confirm {
-    margin-left: 20px;
+    border: 0;
+    width: 228px;
+    padding: 12px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 8px;
+    outline: none;
+    margin-left: 10px;
     margin-top: 15px;
     margin-bottom: 15px;
-    -webkit-box-shadow: 0px 0px 8px 2px rgba(0,0,0,1);
-    -moz-box-shadow: 0px 0px 8px 2px rgba(0,0,0,1);
-    box-shadow: 0px 0px 8px 2px rgba(0,0,0,1);
+    box-shadow: 0 3px rgba(130, 40, 40, 0.75);
+    background-color: rgb(212, 70, 70);
+    margin-right: 10px;
+    transition: box-shadow ease .1s;
+    font-family: 'champagne';
+    font-size: 18px;
+}
+
+.inscription_confirm:hover {
+    box-shadow: 0 2px rgba(130, 40, 40, 0.75);
+    transform: translateY(2px);
+}
+
+.inscription_confirm:active {
+    box-shadow: 0px 0px rgba(130, 40, 40, 0);
+    transform: translateY(3px);
 }

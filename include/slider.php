@@ -48,7 +48,19 @@ $gta_player = $check;
         </ul>
         <ul id="tab">
             <li class="active">
-                <h2>This is the first tab</h2>
+                <div class="scrollbar">
+                    <h2>This is the first tab</h2>
+                    <h2>This is the first tab</h2>
+                    <h2>This is the first tab</h2>
+                    <h2>This is the first tab</h2>
+                    <h2>This is the first tab</h2>
+                    <h2>This is the first tab</h2>
+                    <h2>This is the first tab</h2>
+                    <h2>This is the first tab</h2>
+                    <h2>This is the first tab</h2>
+                    <h2>This is the first tab</h2>
+                    <h2>This is the first tab</h2>
+                </div>
             </li>
             <li>
                 <h2>This is the second tab</h2>

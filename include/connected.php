@@ -1,0 +1,1 @@
+<a href="deconnexion.php">Se déconnecter</a>
