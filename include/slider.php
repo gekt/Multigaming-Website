@@ -6,14 +6,12 @@ include 'include/check.php';
 $gta_player = $check;
 ?>
 
-
-
 <div id="choose_server">   
-    <ul id="buttons"> 
-        <li><a href="#" id="tab1" onclick="selectTab(1); return false;" onfocus="blur();"><span class="valign"></br></br></br></br></br>Joueurs en ligne: <?php echo $gta_player; ?>/250</span></a></li>
-        <li><a href="#" id="tab2" onclick="selectTab(2); return false;" onfocus="blur();"><span class="valign"></br></br></br></br></br>Joueurs en ligne: 0/250</span></a></li>
-        <li><a href="#" id="tab3" onclick="selectTab(3); return false;" onfocus="blur();"><span class="valign"></br></br></br></br></br>Joueurs en ligne: 0/250</span></a></li>
-        <li><a href="#" id="tab4" onclick="selectTab(4); return false;" onfocus="blur();"><span class="valign"></br></br></br></br></br>Soon</span></a></li>
+    <ul id="buttons">
+        <li><img src="img/slider_bouton/s1nb.png" id="tab1" onclick="selectTab(1); return false;"></li>
+        <li><img src="img/slider_bouton/s2nb.png" id="tab2" onclick="selectTab(2); return false;"></li>
+        <li><img src="img/slider_bouton/s3nb.png" id="tab3" onclick="selectTab(3); return false;"></li>
+        <li><img src="img/slider_bouton/s4nb.png" id="tab4" onclick="selectTab(4); return false;"></li>
     </ul>
 
     <div id="box1" class="infobox"> 

@@ -86,33 +86,16 @@ html, body {
   float: right;
   margin-top: 0;
   padding-left: 0;
-  background-color: #959595;
-  color: #888; 
+  /*background-color: #959595;*/
+  /*color: #888; */
   list-style:none;
   text-align: center;
-  border: 2px solid rgba(160, 160, 160, 1);
+  /*border: 2px solid rgba(160, 160, 160, 1);*/
 }
 
 #choose_server #buttons li {
   width: 250px;
 }
-
-#choose_server #buttons a {
-  height: 170px;
-  text-decoration: none;
-  color: white;
-  display: block;
-  transition: background-color ease .2s;
-}
-
-#choose_server #buttons a:hover { background-color: #BFC0C0; color: black; }
-#choose_server #buttons a.selected { 
-  color: white;
-  background: url("../img/arrow.png") no-repeat left;
-  background-color: #666767;
-}
-
-#choose_server #buttons a.selected:hover { background-color: #666767; }
 
 #choose_server .infobox {
   margin-right: 270px;
@@ -138,6 +121,9 @@ span.valign {
   font-family: 'champagne';
   color: white;
 }
+
+#tab1, #tab2, #tab3, #tab4 { cursor: pointer; }
+#tab2, #tab3, #tab4 { margin-top: -68px; }
 
 div.scrollbar {
   overflow: auto;

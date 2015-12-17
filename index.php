@@ -14,7 +14,7 @@ include 'include/inscription.php';
         <script src="js/tabs.js"></script>
         <script src="js/index.js"></script>
     </head>
-    <body onload="selectTab(1);">
+    <body>
         <div class="pour_le_footer">
             <header class="banniere"> <!-- BANNIERE DU HAUT DE PAGE (HEADER) SUR TOUT LA LARGEUR -->
                 <div class="banniere_img">
