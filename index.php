@@ -37,7 +37,7 @@ include 'include/inscription.php';
 ?>
                 </div>
 
-                <div class="contenu_serveur"> <!-- SLIDER SERVEUR EN MILIEU DE PAGE DISPLAY INFO SERVEUR -->
+                <div class="contenu_serveur"> <!-- SLIDER SERVEUR EN MILIEU DE PAGE DISPLAY INFO SERVEUR ET BLOC CENTRALE AVEC TRANSITION -->
 <?php            
                 include'include/slider.php'; 
 ?>

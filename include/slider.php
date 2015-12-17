@@ -2,17 +2,99 @@
 include 'include/check.php';
 ?>
 
-<?php  // CHANGER LES VARIABLE $CHECK EN NOMSERVER_PLAYER (POUR JUJU LE PD)
-$gta_player = $check;
-?>
-
 <div id="choose_server">   
     <ul id="buttons">
-        <li><img src="img/slider_bouton/s1nb.png" id="tab1" onclick="selectTab(1); return false;"></li>
-        <li><img src="img/slider_bouton/s2nb.png" id="tab2" onclick="selectTab(2); return false;"></li>
-        <li><img src="img/slider_bouton/s3nb.png" id="tab3" onclick="selectTab(3); return false;"></li>
-        <li><img src="img/slider_bouton/s4nb.png" id="tab4" onclick="selectTab(4); return false;"></li>
+        <li>
+            <?php
+            if ($gta_status == true) {
+                ?>
+                <img src="img/etiquette/online.png" id="etiquette">
+                <p class="e_text"><?php echo $gta_player;?>/250</p>
+                <?php
+            } else {
+                ?>
+                <img src="img/etiquette/offline.png" id="etiquette">
+                <p class="e_text">Hors-ligne</p>
+                <?php
+            }
+            ?>
+            <img src="img/slider_bouton/s1nb.png" id="tab1" onclick="selectTab(1); return false;">
+        </li>
+        <li>
+            <?php
+            if ($zombie_status == true) {
+                ?>
+                <img src="img/etiquette/online.png" id="etiquette2">
+                <p class="e_text2"><?php echo $zombie_player;?>/250</p>
+                <?php
+            } else {
+                ?>
+                <img src="img/etiquette/offline.png" id="etiquette2">
+                <p class="e_text2">Hors-ligne</p>
+                <?php
+            }
+            ?>
+            <img src="img/slider_bouton/s2nb.png" id="tab2" onclick="selectTab(2); return false;">
+        </li>
+        <li>
+            <?php
+            if ($pixelmon_status == true) {
+                ?>
+                <img src="img/etiquette/online.png" id="etiquette2">
+                <p class="e_text2"><?php echo $pixelmon_player;?>/250</p>
+                <?php
+            } else {
+                ?>
+                <img src="img/etiquette/offline.png" id="etiquette2">
+                <p class="e_text2">Hors-ligne</p>
+                <?php
+            }
+            ?>
+            <img src="img/slider_bouton/s3nb.png" id="tab3" onclick="selectTab(3); return false;">
+        </li>
+        <li>
+            <?php
+            if ($minigame_status == true) {
+                ?>
+                <img src="img/etiquette/online.png" id="etiquette2">
+                <p class="e_text2"><?php echo $minigame_player;?>/250</p>
+                <?php
+            } else {
+                ?>
+                <img src="img/etiquette/offline.png" id="etiquette2">
+                <p class="e_text2">Hors-ligne</p>
+                <?php
+            }
+            ?>
+            <img src="img/slider_bouton/s4nb.png" id="tab4" onclick="selectTab(4); return false;">
+        </li>
     </ul>
+
+    <div id="bloc_centrale">
+        <div class="scrollbar">
+            <h2>This is the first tab</h2>
+            <h2>This is the first tab</h2>
+            <h2>This is the first tab</h2>
+            <h2>This is the first tab</h2>
+            <h2>This is the first tab</h2>
+            <h2>This is the first tab</h2>
+            <h2>This is the first tab</h2>
+            <h2>This is the first tab</h2>
+            <h2>This is the first tab</h2>
+            <h2>This is the first tab</h2>
+            <h2>This is the first tab</h2>
+            <h2>This is the first tab</h2>
+            <h2>This is the first tab</h2>
+            <h2>This is the first tab</h2>
+            <h2>This is the first tab</h2>
+            <h2>This is the first tab</h2>
+            <h2>This is the first tab</h2>
+            <h2>This is the first tab</h2>
+            <h2>This is the first tab</h2>
+            <h2>This is the first tab</h2>
+            <h2>This is the first tab</h2>
+        </div>
+    </div>
 
     <div id="box1" class="infobox"> 
         <ul id="tabs">

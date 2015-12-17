@@ -33,10 +33,10 @@ $(document).ready(function(){
     });
     $("#bouton_toggle").click(function(){
         if ($('#inscription_toggle').css('display') == 'none') {
-            $('#inscription_toggle').toggle("fade", 750);
+            $('#inscription_toggle').toggle("blind", 750);
         }
         else {
-            $('#inscription_toggle').toggle("drop", 300);
+            $('#inscription_toggle').toggle("blind", 750);
         }
     });
 })
@@ -47,6 +47,9 @@ function selectTab(num) {
         document.getElementById("box" + num).className = "infobox";
         document.getElementById("tab" + num).src = 'img/slider_bouton/s' + num + 'nb.png';
         $('#box' + num).effect("drop", 200);
+        setTimeout( function() {
+            $('#bloc_centrale').effect("fade", 100);
+        }, 500);
         console.log("disable box " + num);
     }
     else {
@@ -56,6 +59,7 @@ function selectTab(num) {
             document.getElementById("box" + i).className = "infobox";
             document.getElementById("tab" + i).src = 'img/slider_bouton/s' + i + 'nb.png';
         }
+        $('#bloc_centrale').hide();
         $('#box' + num).effect("fade", 500);
         document.getElementById("tab" + num).className = "selected";
         document.getElementById("box" + num).className = "infobox enabled";
