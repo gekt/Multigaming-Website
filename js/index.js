@@ -48,9 +48,8 @@ function selectTab(num) {
         document.getElementById("tab" + num).src = 'img/slider_bouton/s' + num + 'nb.png';
         $('#box' + num).effect("drop", 200);
         setTimeout( function() {
-            $('#bloc_centrale').effect("fade", 100);
+            $('#bloc_central').effect("fade", 100);
         }, 500);
-        console.log("disable box " + num);
     }
     else {
         for (var i=1; i <= 4; i++) {
@@ -59,12 +58,11 @@ function selectTab(num) {
             document.getElementById("box" + i).className = "infobox";
             document.getElementById("tab" + i).src = 'img/slider_bouton/s' + i + 'nb.png';
         }
-        $('#bloc_centrale').hide();
+        $('#bloc_central').hide();
         $('#box' + num).effect("fade", 500);
         document.getElementById("tab" + num).className = "selected";
         document.getElementById("box" + num).className = "infobox enabled";
         document.getElementById("tab" + num).src = 'img/slider_bouton/s' + num + 'c.png';
-        console.log("enable box " + num);
     }
 };
 

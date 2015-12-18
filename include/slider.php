@@ -70,8 +70,8 @@ include 'include/check.php';
         </li>
     </ul>
 
-    <div id="bloc_centrale">
-        <div class="scrollbar">
+    <div id="bloc_central">
+        <div class="scrollbar_main">
             <h2>This is the first tab</h2>
             <h2>This is the first tab</h2>
             <h2>This is the first tab</h2>

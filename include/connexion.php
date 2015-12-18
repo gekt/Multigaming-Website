@@ -4,11 +4,8 @@ $erreur = "";
 if (isset($_POST['connexion']) && $_POST['connexion'] == 'Connexion') {
 	if ((isset($_POST['login']) && !empty($_POST['login'])) && (isset($_POST['pass']) && !empty($_POST['pass']))) {
 
-	$base = @mysql_connect ('localhost', 'root', '');
-	@mysql_select_db ('espace_membres', $base);
-
 	// on teste si une entrée de la base contient ce couple login / pass
-	$sql = 'SELECT count(*) FROM membre WHERE login="'.@mysql_escape_string($_POST['login']).'" AND pass_md5="'.@mysql_escape_string(md5($_POST['pass'])).'"';
+	$sql = 'SELECT count(*) FROM membres WHERE pseudo="'.@mysql_escape_string($_POST['login']).'" AND pass="'.@mysql_escape_string(md5($_POST['pass'])).'"';
 	$req = @mysql_query($sql) or die('Erreur SQL !<br />'.$sql.'<br />'.mysql_error());
 	$data = @mysql_fetch_array($req);
 
@@ -24,11 +21,11 @@ if (isset($_POST['connexion']) && $_POST['connexion'] == 'Connexion') {
 	}
 	// si on ne trouve aucune réponse, le visiteur s'est trompé soit dans son login, soit dans son mot de passe
 	elseif ($data[0] == 0) {
-		$erreur = 'Compte non reconnu.';
+		$erreur = "Nom d'utilisateur ou mot de passe incorrect !";
 	}
 	// sinon, alors la, il y a un gros problème :)
 	else {
-		$erreur = 'Probème dans la base de données : plusieurs membres ont les mêmes identifiants de connexion.';
+		$erreur = 'Problème dans la base de données : plusieurs membres ont les mêmes identifiants de connexion.';
 	}
 	}
 	else {

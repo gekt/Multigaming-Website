@@ -8,16 +8,13 @@ if (isset($_POST['inscription']) && $_POST['inscription'] == "S'inscrire") {
 		$erreur = 'Les 2 mots de passe sont différents.';
 	}
 	else {
-		$base = @mysql_connect ('localhost', 'root', '');
-		@mysql_select_db ('espace_membres', $base);
-
 		// on recherche si ce login est déjà utilisé par un autre membre
-		$sql = 'SELECT count(*) FROM membre WHERE login="'.@mysql_escape_string($_POST['login']).'"';
+		$sql = 'SELECT count(*) FROM membres WHERE pseudo="'.@mysql_escape_string($_POST['login']).'"';
 		$req = @mysql_query($sql) or die('Erreur SQL !<br />'.$sql.'<br />'.@mysql_error());
 		$data = @mysql_fetch_array($req);
 
 		if ($data[0] == 0) {
-		$sql = 'INSERT INTO membre VALUES("", "'.@mysql_escape_string($_POST['login']).'", "'.@mysql_escape_string(md5($_POST['pass'])).'", "0", "0")';
+		$sql = 'INSERT INTO membres VALUES("", "'.@mysql_escape_string($_POST['login']).'", "'.@mysql_escape_string(md5($_POST['pass'])).'", "0", "0", "0")';
 		@mysql_query($sql) or die('Erreur SQL !'.$sql.'<br />'.@mysql_error());
 
 		session_start();

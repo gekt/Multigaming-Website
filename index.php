@@ -1,6 +1,10 @@
-<?php 
-include 'include/connexion.php';
-include 'include/inscription.php';
+<?php
+    session_start();
+    include 'include/config.php';
+    include 'include/connexion.php';
+    include 'include/inscription.php';
+    include 'include/geoloc/geoipcity.inc';
+    include 'include/geoloc/geoipregionvars.php';
 ?>
 
 <!DOCTYPE html>
@@ -11,6 +15,7 @@ include 'include/inscription.php';
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <script src="//code.jquery.com/jquery-1.10.2.js"></script>
         <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <script src="js/tabs.js"></script>
         <script src="js/index.js"></script>
     </head>
@@ -25,15 +30,13 @@ include 'include/inscription.php';
 
                 <div class="menu">  <!-- MENU CONNEXION/INSCRIPITION ET ESPACE MEMBRE -->
 <?php
-                    session_start();
                     if (isset($_SESSION['login'])) {
+                        include 'include/calcXP.php';
                         include 'include/connected.php';
                     }
                     else {
-                    include 'include/notConnected.php';
-
-                                if (isset($erreur)) echo '<br /><br />',$erreur;
-                            }
+                        include 'include/notConnected.php';
+                    }
 ?>
                 </div>
 

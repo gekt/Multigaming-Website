@@ -33,7 +33,10 @@
                 <?php 
                 if ((isset($_POST['connexion'])) || (isset($_POST['inscription']))) {
                     ?>
-                <div class="erreur"><p><?php echo $erreur;?></p></div>
+                      <div class="alert alert-danger">
+                      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>Erreur !</strong> <?php echo $erreur;?>
+                      </div>
                     <?php
                 }
                 ?>
