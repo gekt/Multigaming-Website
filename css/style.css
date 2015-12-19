@@ -12,8 +12,8 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #1678AD;
-    /*background-image: url("../img/bg.jpg");*/
+    /*background-color: #1678AD;3*/
+    background-image: url("http://walldes-download.com/wp-content/uploads/2015/04/Minecraft-Wide-HD-Wallpaper.jpg");
 }
 
 p {
@@ -42,7 +42,7 @@ p {
     background-color: rgb(50, 50, 50);
     box-shadow: 0px 2px 5px 0px;
     border-bottom: 1px solid #000000;
-    background: url("../img/banniere2.jpg") no-repeat center;
+    background: url("http://www.minecraftrocket.com/wp-content/uploads/2015/03/Minecraft-simple-Wallpaper.jpg") no-repeat center;
     background-size: cover;
     background-attachment: inherit;
 }
