@@ -6,65 +6,105 @@ include 'include/check.php';
     <ul id="buttons">
         <li>
             <?php
-            if ($gta_status == true) {
-                ?>
-                <img src="img/etiquette/online.png" id="etiquette">
-                <p class="e_text"><?php echo $gta_player;?>/250</p>
+            $maintenance = @mysql_query ("SELECT maintenance FROM statut_serveur WHERE serveur='GTA' ");
+            while ($data = @mysql_fetch_array($maintenance)) 
+        if ($data['maintenance'] == 1) {
+            ?>
+                <img src="img/etiquette/maintenance.png" id="etiquette">
+                <p class="e_text_maintenance">Maintenance</p>
+                
                 <?php
-            } else {
-                ?>
-                <img src="img/etiquette/offline.png" id="etiquette">
-                <p class="e_text">Hors-ligne</p>
-                <?php
-            }
+                    }else {
+                    if ($gta_status == true) {
+                        ?>
+                        <img src="img/etiquette/online.png" id="etiquette">
+                        <p class="e_text"><?php echo $gta_player;?>/250</p>
+                        <?php
+                    } else {
+                        ?>
+                        <img src="img/etiquette/offline.png" id="etiquette">
+                        <p class="e_text">Hors-ligne</p>
+                        <?php
+                    }
+                    }
             ?>
             <img src="img/slider_bouton/s1nb.png" id="tab1" onclick="selectTab(1); return false;">
         </li>
         <li>
             <?php
-            if ($zombie_status == true) {
-                ?>
-                <img src="img/etiquette/online.png" id="etiquette2">
-                <p class="e_text2"><?php echo $zombie_player;?>/250</p>
+            $maintenance = @mysql_query ("SELECT maintenance FROM statut_serveur WHERE serveur='zombie' ");
+            while ($data = @mysql_fetch_array($maintenance)) 
+        if ($data['maintenance'] == 1) {
+            ?>
+                <img src="img/etiquette/maintenance.png" id="etiquette2">
+                <p class="e_text2_maintenance">Maintenance</p>
+                
                 <?php
-            } else {
-                ?>
-                <img src="img/etiquette/offline.png" id="etiquette2">
-                <p class="e_text2">Hors-ligne</p>
-                <?php
-            }
+                    }else {
+                    if ($zombie_status == true) {
+                        ?>
+                        <img src="img/etiquette/online.png" id="etiquette2">
+                        <p class="e_text2"><?php echo $zombie_player;?>/250</p>
+                        <?php
+                    } else {
+                        ?>
+                        <img src="img/etiquette/offline.png" id="etiquette2">
+                        <p class="e_text2">Hors-ligne</p>
+                        <?php
+                    }
+                    }
             ?>
             <img src="img/slider_bouton/s2nb.png" id="tab2" onclick="selectTab(2); return false;">
         </li>
         <li>
-            <?php
-            if ($pixelmon_status == true) {
-                ?>
-                <img src="img/etiquette/online.png" id="etiquette2">
-                <p class="e_text2"><?php echo $pixelmon_player;?>/250</p>
+             <?php
+            $maintenance = @mysql_query ("SELECT maintenance FROM statut_serveur WHERE serveur='pixelmon' ");
+            while ($data = @mysql_fetch_array($maintenance)) 
+        if ($data['maintenance'] == 1) {
+            ?>
+                <img src="img/etiquette/maintenance.png" id="etiquette2">
+                <p class="e_text2_maintenance">Maintenance</p>
+                
                 <?php
-            } else {
-                ?>
-                <img src="img/etiquette/offline.png" id="etiquette2">
-                <p class="e_text2">Hors-ligne</p>
-                <?php
-            }
+                    }else {
+                    if ($pixelmon_status == true) {
+                        ?>
+                        <img src="img/etiquette/online.png" id="etiquette2">
+                        <p class="e_text2"><?php echo $pixelmon_player;?>/250</p>
+                        <?php
+                    } else {
+                        ?>
+                        <img src="img/etiquette/offline.png" id="etiquette2">
+                        <p class="e_text2">Hors-ligne</p>
+                        <?php
+                    }
+                    }
             ?>
             <img src="img/slider_bouton/s3nb.png" id="tab3" onclick="selectTab(3); return false;">
         </li>
         <li>
-            <?php
-            if ($minigame_status == true) {
-                ?>
-                <img src="img/etiquette/online.png" id="etiquette2">
-                <p class="e_text2"><?php echo $minigame_player;?>/250</p>
+             <?php
+            $maintenance = @mysql_query ("SELECT maintenance FROM statut_serveur WHERE serveur='mini-game' ");
+            while ($data = @mysql_fetch_array($maintenance)) 
+        if ($data['maintenance'] == 1) {
+            ?>
+                <img src="img/etiquette/maintenance.png" id="etiquette2">
+                <p class="e_text2_maintenance">Maintenance</p>
+                
                 <?php
-            } else {
-                ?>
-                <img src="img/etiquette/offline.png" id="etiquette2">
-                <p class="e_text2">Hors-ligne</p>
-                <?php
-            }
+                    }else {
+                    if ($minigame_status == true) {
+                        ?>
+                        <img src="img/etiquette/online.png" id="etiquette2">
+                        <p class="e_text2"><?php echo $minigame_player;?>/250</p>
+                        <?php
+                    } else {
+                        ?>
+                        <img src="img/etiquette/offline.png" id="etiquette2">
+                        <p class="e_text2">Hors-ligne</p>
+                        <?php
+                    }
+                    }
             ?>
             <img src="img/slider_bouton/s4nb.png" id="tab4" onclick="selectTab(4); return false;">
         </li>

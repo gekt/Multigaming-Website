@@ -226,6 +226,28 @@ p.e_text2 {
     font-size: 13px;
 }
 
+p.e_text_maintenance {
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    position: absolute;
+    color: white;
+    right: 15px;
+    margin-top: 12px;
+    font-family: 'champagne';
+    font-size: 10px;
+}
+
+p.e_text2_maintenance {
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    position: absolute;
+    color: white;
+    right: 14px;
+    margin-top: -42px;
+    font-family: 'champagne';
+    font-size: 10px;
+}
+
 ::-webkit-scrollbar {
     width: 12px;
 }
