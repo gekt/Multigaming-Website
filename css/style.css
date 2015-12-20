@@ -8,6 +8,11 @@
     src: url('../font/Roboto-Thin.ttf');
 }
 
+@font-face {
+    font-family: 'Exo2.0-Black';
+    src: url('../font/Exo2.0-Black.otf');
+}
+
 html, body {
     height: 100%;
     margin: 0;
@@ -64,6 +69,12 @@ p {
 
 img.avatar {
     margin-top: 20px;
+    border: 2px solid rgb(160, 160, 160);
+}
+
+img.flag-membre {
+    position: relative;
+    top: 10px;
 }
 
 div#membre {
@@ -73,9 +84,115 @@ div#membre {
 p#pseudo {
     color: white;
     font-family: 'Roboto-Thin';
-    font-size: 24px;
-    margin: 10px 0;
+    font-size: 20px;
+    margin: 5px 0;
 }
+
+span.badge_lvl {
+    position: relative;
+    top: 13px;
+    color: white;
+    font-family: 'Exo2.0-Black';
+}
+
+span.progressbar_text {
+    position: relative;
+    color: white;
+    top: -28px;
+    font-size: 12px;
+    font-family: 'Exo2.0-Black';
+}
+
+div.badge {
+    background: url('../img/badge_lvl.png') no-repeat center;
+    height: 50px;
+}
+
+p.points_text {
+    position: relative;
+    top: -10px;
+    margin: 0;
+    color: white;
+    font-family: 'champagne';
+}
+
+button.bt-membre {
+    border: 0;
+    padding: 12px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 8px;
+    outline: none;
+    margin: 5px;
+    transition: box-shadow ease .1s;
+    font-family: 'champagne';
+    font-size: 18px;
+}
+
+button.add-points {
+    width: 100px;
+    margin-bottom: 20px;
+    box-shadow: 0 3px rgba(42, 130, 40, 0.75);
+    background-color: rgb(78, 195, 47);
+}
+
+button.add-points:hover { box-shadow: 0 2px rgba(42, 130, 40, 0.75); transform: translateY(2px); }
+button.add-points:active { box-shadow: 0 1px rgba(42, 130, 40, 0.75); transform: translateY(3px); }
+
+button.send-points {
+    width: 100px;
+    margin-bottom: 20px;
+    box-shadow: 0 3px rgba(29, 134, 156, 0.75);
+    background-color: rgb(47, 171, 197);
+}
+
+button.send-points:hover { box-shadow: 0 2px rgba(29, 134, 156, 0.75); transform: translateY(2px); }
+button.send-points:active { box-shadow: 0 1px rgba(29, 134, 156, 0.75); transform: translateY(3px); }
+
+button.bt-badges {
+    width: 130px;
+    box-shadow: 0 3px rgba(179, 134, 17, 0.75);
+    background-color: rgb(204, 155, 26);
+}
+
+button.bt-badges:hover { box-shadow: 0 2px rgba(179, 134, 17, 0.75); transform: translateY(2px); }
+button.bt-badges:active { box-shadow: 0 1px rgba(179, 134, 17, 0.75); transform: translateY(3px); }
+
+button.bt-messagerie {
+    width: 130px;
+    box-shadow: 0 3px rgba(179, 134, 17, 0.75);
+    background-color: rgb(204, 155, 26);
+}
+
+button.bt-messagerie:hover { box-shadow: 0 2px rgba(179, 134, 17, 0.75); transform: translateY(2px); }
+button.bt-messagerie:active { box-shadow: 0 1px rgba(179, 134, 17, 0.75); transform: translateY(3px); }
+
+button.bt-boutique {
+    width: 130px;
+    box-shadow: 0 3px rgba(179, 134, 17, 0.75);
+    background-color: rgb(204, 155, 26);
+}
+
+button.bt-boutique:hover { box-shadow: 0 2px rgba(29, 134, 156, 0.75); transform: translateY(2px); }
+button.bt-boutique:active { box-shadow: 0 1px rgba(29, 134, 156, 0.75); transform: translateY(3px); }
+
+button.bt-vote {
+    width: 130px;
+    box-shadow: 0 3px rgba(179, 134, 17, 0.75);
+    background-color: rgb(204, 155, 26);
+}
+
+button.bt-vote:hover { box-shadow: 0 2px rgba(179, 134, 17, 0.75); transform: translateY(2px); }
+button.bt-vote:active { box-shadow: 0 1px rgba(179, 134, 17, 0.75); transform: translateY(3px); }
+
+button.bt-deconnexion {
+    width: 180px;
+    box-shadow: 0 3px rgba(130, 40, 40, 0.75);
+    background-color: rgb(212, 70, 70);
+}
+
+button.bt-deconnexion:hover { box-shadow: 0 2px rgba(130, 40, 40, 0.75); transform: translateY(2px); }
+button.bt-deconnexion:active { box-shadow: 0 1px rgba(130, 40, 40, 0.75); transform: translateY(3px); }
 
 /* --------------------------------[ SLIDER SERVEUR INFOS ]--------------------------------*/
 
@@ -270,6 +387,8 @@ ul#tabs {
     padding: 0;
     font-family: 'champagne';
     color: white;
+    margin-top: 0;
+    margin-bottom: 0;
     -webkit-margin-before: 0;
     -webkit-margin-after: 0;
 }
@@ -400,7 +519,7 @@ ul#tab li h2 {
     transform: translateY(3px);
 }
 
-input[type="text"], input[type="password"] {
+#inscription_toggle input[type="text"], .connexion input[type="text"], .connexion input[type="password"], #inscription_toggle input[type="password"] {
     background: white;
     margin-bottom: 8px;
     border-radius: 12px;
@@ -414,9 +533,7 @@ input[type="text"], input[type="password"] {
     transition: border-color ease .3s;
 }
 
-input[type="text"]:focus, input[type="password"]:focus {
-    border-color: rgb(27, 136, 189);
-}
+#inscription_toggle input[type="text"]:focus, #inscription_toggle input[type="password"]:focus, .connexion input[type="text"]:focus, .connexion input[type="password"]:focus { border-color: rgb(27, 136, 189); }
 
 div.txt {
     position: relative;
@@ -488,24 +605,6 @@ div.txt img {
     box-shadow: 0px 0px rgba(130, 40, 40, 0);
     transform: translateY(3px);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* ---------------- [ TEST ALERT POPUP] ------------------- */
@@ -602,37 +701,38 @@ div.txt img {
 }
 
 progress {
-   display: block; /* default: inline-block */
+   display: block;
    width: 200px;
-   margin: 1em auto;
-   padding: 4px;
+   margin: 10px auto;
    border: 0 none;
-   background: #444;
    border-radius: 14px;
+   background: transparent;
    box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5),
                0px 1px 0px rgba(255,255,255,0.2);
 }
+
 progress::-moz-progress-bar {
-   background: #FFF;
-   border-radius: 12px;
-   box-shadow: inset 0 -2px 4px rgba(0,0,0,0.4),
-               0 2px 5px 0px rgba(0,0,0,0.3);
+    top: 2px;
+    background-image:
+        -moz-linear-gradient(-45deg, transparent 33%, rgba(0, 0, 0, .1) 33%, rgba(0,0, 0, .1) 66%, transparent 66%),
+        -moz-linear-gradient(top, rgba(255, 255, 255, .25), rgba(0, 0, 0, .25)),
+        -moz-linear-gradient(left, #09c, #f44);
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+    border-radius: 12px;
+    box-shadow: inset 0 -2px 4px rgba(0,0,0,0.4), 0 2px 5px 0px rgba(0,0,0,0.3); 
 }
 
-/* une méthode pour ne cibler que Chrome */
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-   progress {
-      height: 25px; /* légèrement plus fin sur Chrome par défaut */
-   }
-}
-/* on enlève le fond de cet élément supplémentaire */
 progress::-webkit-progress-bar {
-   background: transparent;
+    background: transparent;
 }
-/* on applique les mêmes styles que sur ::-moz-progress-bar */
-progress::-webkit-progress-value {  
-   background: #FFF;
-   border-radius: 12px;
-   box-shadow: inset 0 -2px 4px rgba(0,0,0,0.4),
-               0 2px 5px 0px rgba(0,0,0,0.3); 
+
+progress::-webkit-progress-value {
+    top: 2px;
+    background-image:
+        -webkit-linear-gradient(-45deg, transparent 33%, rgba(0, 0, 0, .1) 33%, rgba(0,0, 0, .1) 66%, transparent 66%),
+        -webkit-linear-gradient(top, rgba(255, 255, 255, .25), rgba(0, 0, 0, .25)),
+        -webkit-linear-gradient(left, #09c, #f44);
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+    border-radius: 12px;
+    box-shadow: inset 0 -2px 4px rgba(0,0,0,0.4), 0 2px 5px 0px rgba(0,0,0,0.3); 
 } 
