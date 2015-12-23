@@ -19,6 +19,16 @@
 ?>
 
 <div id="membre">
+    <?php if ($notifications > 0) {
+    ?>
+    <img class="notification_ico" data-modal="open_notification" src="img/notification.png"/>
+    <?php
+    }else {
+        ?>
+        <img class="notification_ico" data-modal="open_notification" style="visibility: hidden;" src="img/notification.png"/>
+        <?php
+    }
+    ?>
     <img class="avatar" style="border-radius: 5px;" src="https://minotar.net/avatar/<?php echo $_SESSION['login']; ?>/80.png"/>
     <p id="pseudo"><?php echo $_SESSION['login']; ?></p>
     <div class="badge">

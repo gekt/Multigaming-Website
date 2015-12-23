@@ -60,17 +60,28 @@
         else {
             $update_points = "UPDATE membres SET points= points + '" . $_POST['points_envoyé'] . "'  WHERE pseudo='" . $_POST['pseudo_destinataire'] . "'";
             mysql_query($update_points) or die('Erreur SQL !'.$update_points.'<br />'.mysql_error());
+            @mysql_free_result($update_points);
+
             $update_points2 = "UPDATE membres SET points= points - '" . $_POST['points_envoyé'] . "'  WHERE pseudo='" . $_SESSION['login'] . "'";
             mysql_query($update_points2) or die('Erreur SQL !'.$update_points2.'<br />'.mysql_error());
+            @mysql_free_result($update_points2);
+
+            $notifications_envoie = "INSERT INTO notification VALUES ('', '" . $_SESSION['login'] . "', 'Vous avez envoyé ". $_POST['points_envoyé'] ." points à " . $_POST['pseudo_destinataire'] . "')";
+            mysql_query($notifications_envoie) or die('Erreur SQL !'.$notifications_envoie.'<br />'.mysql_error());
+            @mysql_free_result($notifications_envoie);
+
+            $notifications_envoie2 = "INSERT INTO notification VALUES ('', '" . $_POST['pseudo_destinataire'] . "', 'Vous avez reçu ". $_POST['points_envoyé'] ." points de " . $_SESSION['login'] . "')";
+            mysql_query($notifications_envoie2) or die('Erreur SQL !'.$notifications_envoie2.'<br />'.mysql_error());
+            @mysql_free_result($notifications_envoie2);
+
 ?>
             <div class="alert alert-success alert-espace-membre">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                     <strong>Succès !</strong> Vous avez envoyé <?php echo $_POST['points_envoyé']; ?> points à <?php echo $_POST['pseudo_destinataire'];?>
             </div>
 <?php
+            }
         }
     }
-  }
-
 
 ?>

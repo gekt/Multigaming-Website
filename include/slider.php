@@ -151,7 +151,7 @@ include 'include/check.php';
                 <h2>This is the second tab</h2>
             </li>
             <li>
-                <h2>Tab number three wee hee</h2>
+                <h2><?php include 'include/GTA_news.php';?></h2>
             </li>
             <li>
                 <h2>Fourth tab not bad</h2>
@@ -186,7 +186,7 @@ include 'include/check.php';
                 <h2>This is the second tab</h2>
             </li>
             <li>
-                <h2>Tab number three wee hee</h2>
+                <h2><?php include 'include/zombie_news.php';?></h2>
             </li>
             <li>
                 <h2>Fourth tab not bad</h2>
@@ -209,7 +209,7 @@ include 'include/check.php';
                 <h2>This is the second tab</h2>
             </li>
             <li>
-                <h2>Tab number three wee hee</h2>
+                <h2><?php include 'include/pixelmon_news.php';?></h2>
             </li>
             <li>
                 <h2>Fourth tab not bad</h2>
@@ -232,7 +232,7 @@ include 'include/check.php';
                 <h2>This is the second tab</h2>
             </li>
             <li>
-                <h2>Tab number three wee hee</h2>
+                <h2><?php include 'include/minigame_news.php';?></h2>
             </li>
             <li>
                 <h2>Fourth tab not bad</h2>

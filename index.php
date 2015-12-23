@@ -22,6 +22,7 @@
     </head>
     <body>
 <?php 
+        include 'include/popup/notification.php';
         include 'include/envoyer_points.php';
 ?>
         <div class="pour_le_footer">
