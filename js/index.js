@@ -92,3 +92,15 @@ function selectTab(num) {
 $(document).on('mouseover mousedown', 'a, img', function() {
     return false;
 });
+
+
+var auto_refresh = setInterval(
+(function () {
+  $("#notif_img").load("include/notification_img.php"); //Load the content into the div
+  }), 1000);
+
+var auto_text_notif = setInterval(
+(function () {
+  $("#refresh_text").load("include/popup/notification.php"); //Load the content into the div
+  }), 1000);
+

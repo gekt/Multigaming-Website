@@ -1,4 +1,4 @@
-<?php 
+<?php
     $checkadmin = @mysql_query ("SELECT * FROM membres WHERE pseudo='" . $_SESSION['login'] . "' ");
     while ($data = @mysql_fetch_array($checkadmin)) {
         $nb_points = $data['points'];
@@ -73,15 +73,13 @@
             $notifications_envoie2 = "INSERT INTO notification VALUES ('', '" . $_POST['pseudo_destinataire'] . "', 'Vous avez reçu ". $_POST['points_envoyé'] ." points de " . $_SESSION['login'] . "')";
             mysql_query($notifications_envoie2) or die('Erreur SQL !'.$notifications_envoie2.'<br />'.mysql_error());
             @mysql_free_result($notifications_envoie2);
-
 ?>
             <div class="alert alert-success alert-espace-membre">
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                     <strong>Succès !</strong> Vous avez envoyé <?php echo $_POST['points_envoyé']; ?> points à <?php echo $_POST['pseudo_destinataire'];?>
             </div>
-<?php
+<?php 
             }
         }
     }
-
 ?>

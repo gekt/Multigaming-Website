@@ -21,8 +21,9 @@
         <script src="js/index.js"></script>        
     </head>
     <body>
+    <div class="modal-wrapper" data-modal="wrapper_notification"><div id="refresh_text" class="modal-content">
+</div></div>
 <?php 
-        include 'include/popup/notification.php';
         include 'include/envoyer_points.php';
 ?>
         <div class="pour_le_footer">
@@ -44,6 +45,7 @@
                     }
 ?>
                 </div>
+
 
                 <div class="contenu_serveur"> <!-- SLIDER SERVEUR EN MILIEU DE PAGE DISPLAY INFO SERVEUR ET BLOC CENTRALE AVEC TRANSITION -->
 <?php            

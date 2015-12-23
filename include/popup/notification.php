@@ -1,7 +1,7 @@
-<div class="modal-wrapper" data-modal="wrapper_notification">
-    <div class="modal-content">
-        <button data-modal="close_notification" class="modal-close-button">&times;</button>
-<?php
+<?php session_start();?>
+<script src="js/pop_up.js"></script> 
+<button data-modal="close_notification" class="modal-close-button">&times;</button>
+        <?php
             @mysql_connect("localhost", "root", "");
             @mysql_select_db("multigaming");
             $sql = "SELECT * FROM notification WHERE pseudo='" . $_SESSION['login'] . "'";
@@ -30,5 +30,3 @@
             document.location.href="include/supprimer_notif.php"
         }
     </script>
-    </div>
-</div>
