@@ -1,37 +1,58 @@
-	/*
-* Modalzinha.js
-*
-* by Fernando Soares (dotfernando@gmail.com)
-* github.com/ferspeak/modalzinha-js
-*
-*/
+var Popup_send_points = (function() {
 
-var Modal = (function() {
+    var modalOpen = document.querySelector('[data-modal="open_send_points"]'),
+        modalClose = document.querySelector('[data-modal="close_send_points"]'),
+        modalWrapper = document.querySelector('[data-modal="wrapper_send_points"]');
 
-  var modalOpen = document.querySelector('[data-modal="open"]'),
-      modalClose = document.querySelector('[data-modal="close"]'),
-      modalWrapper = document.querySelector('[data-modal="wrapper"]');
-
-      return {
+    return {
         init: function() {
-          this.abrir();
-          this.fechar();
+            this.open();
+            this.close();
         },
 
-        abrir: function() {
-          modalOpen.onclick = function(e) {
-            e.preventDefault;
-              modalWrapper.classList.add("modal-opened");
-          }
+        open: function() {
+            modalOpen.onclick = function(e) {
+                e.preventDefault;
+                modalWrapper.classList.add("modal-opened");
+            }
         },
 
-        fechar: function() {
+        close: function() {
             modalClose.onclick = function(e) {
-              e.preventDefault;
-              modalWrapper.classList.remove("modal-opened");
+                e.preventDefault;
+                modalWrapper.classList.remove("modal-opened");
             }
         }
-      }
+    }
 }());
 
-Modal.init();
+var Popup_vote = (function() {
+
+    var modalOpen = document.querySelector('[data-modal="open_vote"]'),
+        modalClose = document.querySelector('[data-modal="close_vote"]'),
+        modalWrapper = document.querySelector('[data-modal="wrapper_vote"]');
+
+    return {
+        init: function() {
+            this.open();
+            this.close();
+        },
+
+        open: function() {
+            modalOpen.onclick = function(e) {
+                e.preventDefault;
+                modalWrapper.classList.add("modal-opened");
+            }
+        },
+
+        close: function() {
+            modalClose.onclick = function(e) {
+                e.preventDefault;
+                modalWrapper.classList.remove("modal-opened");
+            }
+        }
+    }
+}());
+
+Popup_vote.init();
+Popup_send_points.init();

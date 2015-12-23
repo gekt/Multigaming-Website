@@ -1,3 +1,5 @@
+var points = loadPoints();
+
 $(document).ready(function(){
     $("#tab1").hover(function(){
         document.getElementById("tab1").src = 'img/slider_bouton/s1c.png';
@@ -39,7 +41,28 @@ $(document).ready(function(){
             $('#inscription_toggle').toggle("blind", 750);
         }
     });
-})
+    showPoints();
+});
+
+function showPoints() {
+    setInterval(function() {
+        $('.points_number').text(loadPoints());
+        $('.points_number_popup_send').text(loadPoints() + " points");
+        if (loadPoints() <= 1) {
+            $('.points_number_popup_send').text(loadPoints() + " point");
+        }
+        else {
+            $('.points_number_popup_send').text(loadPoints() + " points");
+        }
+    }, 1000);
+};
+
+function loadPoints() {
+    $.get("include/getPoints.php", function(data) {
+        points = data;
+    });
+    return points;
+};
 
 function selectTab(num) {
     if ($("#box" + num).attr('class') == "infobox enabled") {
