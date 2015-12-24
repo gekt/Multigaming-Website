@@ -41,6 +41,29 @@ $(document).ready(function(){
             $('#inscription_toggle').toggle("blind", 750);
         }
     });
+
+    $(".bt-starpass-toggle").click(function() {
+        if ($('#global-box-p').css('display') == 'none') {
+            $('#starpass-paiement').toggle("blind", 300);
+            setTimeout( function() {
+                $('#global-box-p').toggle("fade", 300);
+            }, 300);
+        }
+        else {
+            setTimeout( function() {
+                $('#starpass-paiement').toggle("blind", 300);
+            }, 300);
+            $('#global-box-p').toggle("fade", 300);
+        }
+    });
+
+    $(".bt-starpass-toggle").hover(function() {
+        $("#price-p-50").text("3.20 €");
+    });
+
+    $("#bt-paypal").hover(function() {
+        $("#price-p-50").text("2.00 €");
+    });
     showPoints();
 });
 

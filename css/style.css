@@ -803,3 +803,56 @@ progress::-webkit-progress-value {
     outline: none;
     cursor: pointer;
 }
+
+.add_points_content {
+    max-width: 800px;
+}
+
+div.box-p {
+    margin: 15px;
+    height: 300px;
+    width: 200px;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 5px;
+    border: 2px solid black;
+    text-align: center;
+}
+
+h2.title-p {
+    padding-top: 15px;
+    font-family: 'Roboto-Thin';
+    font-size: 20px;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+}
+
+img.img-p {
+    width: 100px;
+}
+
+
+button.bt-starpass {
+    border: 0;
+    padding: 8px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    outline: none;
+    margin: 5px;
+    font-family: 'champagne';
+    font-size: 18px;
+    margin-top: 40px;
+    width: 100px;
+    height: 39px;
+    /*box-shadow: 0 3px rgba(130, 40, 40, 0.75);*/
+    background-color: rgb(212, 70, 70);
+}
+
+/*button.bt-starpass:hover { box-shadow: 0 2px rgba(130, 40, 40, 0.75); transform: translateY(2px); }
+button.bt-starpass:active { box-shadow: 0 1px rgba(130, 40, 40, 0.75); transform: translateY(3px); }*/
+
+.button-paypal {
+    bottom: 55px;
+    position: absolute;
+}

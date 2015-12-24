@@ -42,7 +42,7 @@ include 'include/config.php';
 ?>
 
 <?php
-if (isset($_POST['go']) && $_POST['go']=='Poster la news') {
+if (isset($_POST['go'])) {
 	if (!isset($_POST['titre']) || !isset($_POST['news'])) {
 	$erreur = 'Les variables nécessaires au script ne sont pas définies.';
 	}
@@ -64,7 +64,7 @@ if (isset($_POST['go']) && $_POST['go']=='Poster la news') {
 <?php
     $base = @mysql_connect ('localhost', 'root', '');
     @mysql_select_db ('multigaming', $base);
-if (isset($_POST['notif_all']) && $_POST['notif_all']=='Poster la news') {
+if (isset($_POST['notif_all']) && $_POST['notif_all']=='Poster la notif') {
 	if (!isset($_POST['notif'])) {
 	$erreur = 'Les variables nécessaires au script ne sont pas définies.';
 	}
@@ -110,6 +110,7 @@ if (isset($_POST['notif_all']) && $_POST['notif_all']=='Poster la news') {
 
 	<form action="admin.php" method="post">
 		Poster une news:<br><br>
+		Titre: <input type="text" name="titre" maxlength="50" size="50" value="<?php if (isset($_POST['titre'])) echo htmlentities(trim($_POST['titre'])); ?>"><br><br>
 		News :<textarea name="news" cols="50" rows="10"><?php if (isset($_POST['news'])) echo htmlentities(trim($_POST['news'])); ?></textarea><br><br>
 		<label>Serveur <SELECT name="serveur" size="1">
 		<OPTION>pixelmon
@@ -125,9 +126,9 @@ if (isset($_POST['notif_all']) && $_POST['notif_all']=='Poster la news') {
 
 	<form action="admin.php" method="post">
 		Envoyer une notification à tout les membres:<br><br>
-		Notification :<textarea name="notif" cols="50" rows="10"><?php if (isset($_POST['news'])) echo htmlentities(trim($_POST['news'])); ?></textarea><br><br>
-		pseudo du joueur (all pour envoyer a tout le monde) :<input type="text" name="pseudo"><?php if (isset($_POST['news'])) echo htmlentities(trim($_POST['news'])); ?></textarea><br><br>
-		<input type="submit" name="notif_all" value="Poster la news"><br>
+		Notification :<textarea name="notif" cols="50" rows="10"><?php if (isset($_POST['notif'])) echo htmlentities(trim($_POST['notif'])); ?></textarea><br><br>
+		pseudo du joueur (all pour envoyer a tout le monde) :<input type="text" name="pseudo"><?php if (isset($_POST['pseudo'])) echo htmlentities(trim($_POST['pseudo'])); ?></textarea><br><br>
+		<input type="submit" name="notif_all" value="Poster la notif"><br>
 	</form>
 <?php
 		if (isset($erreur)) echo '<br /><br />',$erreur;

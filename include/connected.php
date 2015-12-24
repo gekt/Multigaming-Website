@@ -1,13 +1,19 @@
 <?php
         $gi = geoip_open(realpath("include/geoloc/GeoLiteCity.dat"),GEOIP_STANDARD);
         if ($_SERVER['REMOTE_ADDR'] != '::1') {
-            $record = geoip_record_by_addr($gi,$_SERVER['REMOTE_ADDR']);
-            $code = geoip_country_code_by_addr($gi, $_SERVER['REMOTE_ADDR']);
-            $pays = $record->country_name;
+            if ($_SERVER['REMOTE_ADDR'] != '192.168.1.254') {
+                $record = geoip_record_by_addr($gi, $_SERVER['REMOTE_ADDR']);
+                $code = geoip_country_code_by_addr($gi, $_SERVER['REMOTE_ADDR']);
+                $pays = $record->country_name;
 
-            $url = 'http://' . $_SERVER['SERVER_ADDR'] . ':' . $_SERVER['SERVER_PORT'] . '/site_mg/img/flag/' . $code . '.png';
-            $headers = get_headers($url, 1);
-            if ($headers[0] == 'HTTP/1.1 404 Not Found') {
+                $url = 'http://' . $_SERVER['SERVER_ADDR'] . '/site_mg/img/flag/' . $code . '.png';
+                $headers = get_headers($url, 1);
+                if ($headers[0] == 'HTTP/1.1 404 Not Found') {
+                    $code = "Unknown";
+                }
+            }
+            else {
+                $pays = "Localhost";
                 $code = "Unknown";
             }
         }
@@ -28,7 +34,7 @@
     <progress value="<?php echo $getPourcentage ?>" max="100"></progress>
     <span class="progressbar_text"><?php echo $getPourcentage ?> %</span>
     <p class="points_text">Tes points : <span class="points_number"><?php echo $nb_points ?></span></p>
-    <button class="bt-membre add-points">Ajouter</button>
+    <button class="bt-membre add-points" data-modal="open_add_points">Ajouter</button>
     <button class="bt-membre send-points" data-modal="open_send_points">Envoyer</button>
     <button class="bt-membre bt-badges">Badges</button>
     <!--<button class="bt-membre bt-messagerie">Messagerie</button>-->

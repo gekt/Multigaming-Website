@@ -21,6 +21,18 @@
         <script src="js/index.js"></script>        
     </head>
     <body>
+
+        <?php
+            if (isset($_GET['paiement']) && $_GET['paiement'] == 'valide') {
+        ?>
+                <div class="alert alert-success alert-espace-membre">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>Succès !</strong> Merci de votre achat !
+                </div>
+        <?php
+            }else{}
+        ?>
+
     <div class="modal-wrapper" data-modal="wrapper_notification"><div id="refresh_text" class="modal-content">
 </div></div>
 <?php 
@@ -63,6 +75,7 @@
 <?php
     include 'include/popup/vote.php';
     include 'include/popup/envoyerPoints.php';
+    include 'include/popup/addPoints.php';
 ?>
 
     </body>

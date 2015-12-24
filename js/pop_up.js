@@ -82,6 +82,35 @@ var Popup_notifications = (function() {
     }
 }());
 
+var Popup_add_points = (function() {
+
+    var modalOpen = document.querySelector('[data-modal="open_add_points"]'),
+        modalClose = document.querySelector('[data-modal="close_add_points"]'),
+        modalWrapper = document.querySelector('[data-modal="wrapper_add_points"]');
+
+    return {
+        init: function() {
+            this.open();
+            this.close();
+        },
+
+        open: function() {
+            modalOpen.onclick = function(e) {
+                e.preventDefault;
+                modalWrapper.classList.add("modal-opened");
+            }
+        },
+
+        close: function() {
+            modalClose.onclick = function(e) {
+                e.preventDefault;
+                modalWrapper.classList.remove("modal-opened");
+            }
+        }
+    }
+}());
+
+Popup_add_points.init();
 Popup_notifications.init();
 Popup_vote.init();
 Popup_send_points.init();
