@@ -44,21 +44,21 @@ $(document).ready(function(){
 
     $(".bt-starpass-toggle").click(function() {
         if ($('#global-box-p').css('display') == 'none') {
-            $('#starpass-paiement').toggle("blind", 300);
+            $('#starpass-paiement').toggle("fade", 300);
             setTimeout( function() {
                 $('#global-box-p').toggle("fade", 300);
-            }, 300);
+            }, 350);
         }
         else {
             setTimeout( function() {
-                $('#starpass-paiement').toggle("blind", 300);
-            }, 300);
+                $('#starpass-paiement').toggle("fade", 300);
+            }, 350);
             $('#global-box-p').toggle("fade", 300);
         }
     });
 
     $(".bt-starpass-toggle").hover(function() {
-        $("#price-p-50").text("3.20 €");
+        $("#price-p-50").text("3.00 €");
     });
 
     $("#bt-paypal").hover(function() {

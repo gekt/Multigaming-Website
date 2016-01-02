@@ -18,7 +18,7 @@
         while ($data = @mysql_fetch_array($req)) {
 ?>
             <p>
-            <?php echo html_entity_decode(nl2br(htmlentities(trim($data['message'])))) ?>
+            <?php echo $data['time']; ?> <?php echo html_entity_decode(nl2br(htmlentities(trim($data['message'])))) ?>
             </p>
 <?php
         }

@@ -73,19 +73,16 @@
     </footer>
 
 <?php
-    include 'include/popup/vote.php';
-    include 'include/popup/envoyerPoints.php';
-    include 'include/popup/addPoints.php';
+    if (isset($_SESSION['login'])) {
+        include 'include/popup/vote.php';
+        include 'include/popup/envoyerPoints.php';
+        include 'include/popup/addPoints.php';
+        include 'include/popup/badge.php';
+    } else {}
 ?>
 
     </body>
 </html>
 
-
-
-
-
-
-
 <!-- # LA SOLITUDE DU JS -->
-<script src="js/pop_up.js"></script> 
+<script src="js/pop_up.js"></script>

@@ -1,13 +1,6 @@
 		    <div class="modal-wrapper vote_popup" data-modal="wrapper_vote">
             <div class="modal-content">
                 <button data-modal="close_vote" class="modal-close-button">&times;</button>
-                <?php 
-						$connect = new PHPSsend();
-						$result = $connect->PHPSconnect("62.210.244.80","3fdd82fa8e07ee0a","11223");
-						$player = $_SESSION['login'];
-						//$connect->PHPScommand("give " . $player . " 42 64");
-						$hidden = "false";
-						?>
 
 									<script type="text/javascript" language="Javascript">
 										function openVote() {
@@ -18,11 +11,11 @@
 						<?php
 						 	@mysql_connect("localhost", "root", ""); // Connexion à la base de données
 						 	@mysql_select_db("multigaming"); // Sélection de la base de données
-						 	$check_exist = @mysql_query("SELECT pseudo FROM vote WHERE pseudo='" . $player . "'");
+						 	$check_exist = @mysql_query("SELECT pseudo FROM vote WHERE pseudo='" . $_SESSION['login'] . "'");
 						 	if (@mysql_num_rows($check_exist) == 0) {
-						 		@mysql_query("INSERT INTO vote (pseudo, time) VALUES ('". $player ."', 0)");
+						 		@mysql_query("INSERT INTO vote (pseudo, time) VALUES ('". $_SESSION['login'] ."', 0)");
 							}
-							$reponse = @mysql_query ("SELECT * FROM vote WHERE pseudo='" . $player . "' "); // Requête SQL
+							$reponse = @mysql_query ("SELECT * FROM vote WHERE pseudo='" . $_SESSION['login'] . "' "); // Requête SQL
 							while ($donnees = @mysql_fetch_array($reponse)) // On boucle pour afficher toutes les données et on met toutes données dans un tableau
 							{
 								$time = $donnees['time'];
@@ -39,25 +32,15 @@
 						?>
 									<p>Vous avez déja voté !</p>
 									<p id="revote"></p> 
-
 						<?php
 							}
-							if (isset($_POST['vote_1'])) {
-								if ($time_atm >= $time) {
-									@mysql_query("UPDATE vote SET time='" . $time_cd . "' WHERE pseudo='". $player ."' ");
-									$connect->PHPScommand("say " . $player . " vient de voter pour le serveur !");
-									$connect->PHPScommand("give " . $player . " 42 64");
-									header('Location: index.php');
-								}
-								else {}
-							}
-							$result = $connect->PHPSdisconnect();
 						?>
 
-
-                 <form action="index.php" method="post">
+                 <form action="include/checkVote.php" method="post">
 			        <input type="hidden" name="vote_1" value="<?php echo $time_cd; ?>">
 			        <input type="<?php echo $hidden ?>" name="vote" value="voter" onclick="openVote()">
+			        <input type="hidden" name="time" value="<?php echo $time; ?>">
+			        <input type="hidden" name="time_atm" value="<?php echo $time_atm; ?>">
 			     </form>
             </div>
         </div>

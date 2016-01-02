@@ -66,11 +66,16 @@
             mysql_query($update_points2) or die('Erreur SQL !'.$update_points2.'<br />'.mysql_error());
             @mysql_free_result($update_points2);
 
-            $notifications_envoie = "INSERT INTO notification VALUES ('', '" . $_SESSION['login'] . "', 'Vous avez envoyé ". $_POST['points_envoyé'] ." points à " . $_POST['pseudo_destinataire'] . "')";
+            $notifications_envoie = "INSERT INTO notification VALUES ('', '" . $_SESSION['login'] . "', 'Vous avez envoyé ". $_POST['points_envoyé'] ." points à " . $_POST['pseudo_destinataire'] . "',  '".date("Y-m-d H:i:s")."')";
             mysql_query($notifications_envoie) or die('Erreur SQL !'.$notifications_envoie.'<br />'.mysql_error());
             @mysql_free_result($notifications_envoie);
 
-            $notifications_envoie2 = "INSERT INTO notification VALUES ('', '" . $_POST['pseudo_destinataire'] . "', 'Vous avez reçu ". $_POST['points_envoyé'] ." points de " . $_SESSION['login'] . "')";
+            $time_now = mktime(date("H"), date("i"), date("s"), date("m"), date("d"), date("Y")); 
+            $historique_envoie = "INSERT INTO historique_points VALUES ('', '" . $_SESSION['login'] . "', '" . $_POST['pseudo_destinataire'] . "', '". $_POST['points_envoyé'] ."' , '". $time_now ."')";
+            mysql_query($historique_envoie) or die('Erreur SQL !'.$historique_envoie.'<br />'.mysql_error());
+            @mysql_free_result($historique_envoie);
+
+            $notifications_envoie2 = "INSERT INTO notification VALUES ('', '" . $_POST['pseudo_destinataire'] . "', 'Vous avez reçu ". $_POST['points_envoyé'] ." points de " . $_SESSION['login'] . "', '".date("Y-m-d H:i:s")."')";
             mysql_query($notifications_envoie2) or die('Erreur SQL !'.$notifications_envoie2.'<br />'.mysql_error());
             @mysql_free_result($notifications_envoie2);
 ?>

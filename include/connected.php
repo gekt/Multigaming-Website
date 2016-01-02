@@ -36,10 +36,11 @@
     <p class="points_text">Tes points : <span class="points_number"><?php echo $nb_points ?></span></p>
     <button class="bt-membre add-points" data-modal="open_add_points">Ajouter</button>
     <button class="bt-membre send-points" data-modal="open_send_points">Envoyer</button>
-    <button class="bt-membre bt-badges">Badges</button>
+    <button class="bt-membre bt-badges" data-modal="open_badge">Badges</button>
     <!--<button class="bt-membre bt-messagerie">Messagerie</button>-->
     <button class="bt-membre bt-boutique">Boutique</button>
     <button class="bt-membre bt-vote" data-modal="open_vote">Vote</button>
+    <button class="bt-membre bt-vote">Forum</button>
     <button class="bt-membre bt-deconnexion"onclick="location.href='deconnexion.php';">Déconnexion</button>
     <img class="flag-membre" src="img/flag/<?php echo $code; ?>.png">
 </div>

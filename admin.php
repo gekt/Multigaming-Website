@@ -75,14 +75,14 @@ if (isset($_POST['notif_all']) && $_POST['notif_all']=='Poster la notif') {
 	else if ($_POST['pseudo'] == "all") {
 		$notification_envoie = @mysql_query ("SELECT pseudo FROM membres ");
 	    while ($data = @mysql_fetch_array($notification_envoie)){
-			    $sql = 'INSERT INTO notification VALUES("", "'.$data['pseudo'].'", "'.$_POST['notif'].'")';
+			    $sql = 'INSERT INTO notification VALUES("", "'.$data['pseudo'].'", "'.$_POST['notif'].'", "'.date("Y-m-d H:i:s").'")';
 				@mysql_query($sql) or die('Erreur SQL !'.$sql.'<br />'.@mysql_error());
 	        }
 	        echo "notification envoyée à tout le monde!";
 			@mysql_close();
 	        exit();
 	}else if ($_POST['pseudo'] != "all"){
-		$sql = 'INSERT INTO notification VALUES("", "'.$_POST['pseudo'].'", "'.$_POST['notif'].'")';
+		$sql = 'INSERT INTO notification VALUES("", "'.$_POST['pseudo'].'", "'.$_POST['notif'].'", "'.date("Y-m-d H:i:s").'")';
 		@mysql_query($sql) or die('Erreur SQL !'.$sql.'<br />'.@mysql_error());
 		echo "notification envoyée à " .$_POST['pseudo']. "";
 
