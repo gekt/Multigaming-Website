@@ -1,22 +1,19 @@
 <?php
     function initSQL($server) {
+        $SQL = @mysql_connect ('localhost', 'root', '');
         if ($server == 1) {
-            $SQL = @mysql_connect ('localhost', 'root', '');
             @mysql_select_db('pstats', $SQL);
         }
 
         elseif ($server == 2) {
-            $SQL = @mysql_connect ('localhost', 'root', '');
             @mysql_select_db('pstats', $SQL);
         }
 
         elseif ($server == 3) {
-            $SQL = @mysql_connect ('localhost', 'root', '');
             @mysql_select_db('pstats', $SQL);
         }
 
         elseif ($server == 4) {
-            $SQL = @mysql_connect ('localhost', 'root', '');
             @mysql_select_db('pstats', $SQL);
         }
 
@@ -57,6 +54,39 @@
             <li class="active">
                 <div class="scrollbar-badge">
                     <div class="box-badge">
+                        <h3 class="title-badge">Badge LibertyStory</h3>
+                        <img src="img/badge_points.png" class="img-badge">
+                        <p class="desc-badge">Se connecter pour la première fois au serveur.</p>
+                        <p class="etat-badge">Obtenu !</p>
+                        <div class="uk-progress uk-progress-striped uk-active uk-progress-small">
+                            <div class="uk-progress-bar" style="width: 40%;"></div>
+                        </div>
+                    </div>
+                    <div class="box-badge">
+                        <h3>Badge LibertyStory</h3>
+                        <img src="">
+                        <p>ID : <?php echo callSQL(1, "stats_players", "player_id"); ?></p>
+                        <p>Nb login : <?php echo callSQL(1, "stats_players", "logins"); ?></p>
+                        <p>Playtime : <?php echo callSQL(1, "stats_players", "playtime"); ?></p>
+                        <p>Distance à pied parcourue : <?php echo callSQL(1, "stats_distances", "foot"); ?>m</p>
+                    </div>
+                    <div class="box-badge">
+                        <h3>Badge LibertyStory</h3>
+                        <img src="">
+                        <p>ID : <?php echo callSQL(1, "stats_players", "player_id"); ?></p>
+                        <p>Nb login : <?php echo callSQL(1, "stats_players", "logins"); ?></p>
+                        <p>Playtime : <?php echo callSQL(1, "stats_players", "playtime"); ?></p>
+                        <p>Distance à pied parcourue : <?php echo callSQL(1, "stats_distances", "foot"); ?>m</p>
+                    </div>
+                    <div class="box-badge">
+                        <h3>Badge LibertyStory</h3>
+                        <img src="">
+                        <p>ID : <?php echo callSQL(1, "stats_players", "player_id"); ?></p>
+                        <p>Nb login : <?php echo callSQL(1, "stats_players", "logins"); ?></p>
+                        <p>Playtime : <?php echo callSQL(1, "stats_players", "playtime"); ?></p>
+                        <p>Distance à pied parcourue : <?php echo callSQL(1, "stats_distances", "foot"); ?>m</p>
+                    </div>
+                    <div class="box-badge">
                         <h3>Badge LibertyStory</h3>
                         <img src="">
                         <p>ID : <?php echo callSQL(1, "stats_players", "player_id"); ?></p>
@@ -68,6 +98,26 @@
             </li>
             <li>
                 <div class="scrollbar-badge">
+                    <div class="box-badge">
+                        <h3>Badge UprisingMerde</h3>
+                        <img src="">
+                        <p></p>
+                    </div>
+                    <div class="box-badge">
+                        <h3>Badge UprisingMerde</h3>
+                        <img src="">
+                        <p></p>
+                    </div>
+                    <div class="box-badge">
+                        <h3>Badge UprisingMerde</h3>
+                        <img src="">
+                        <p></p>
+                    </div>
+                    <div class="box-badge">
+                        <h3>Badge UprisingMerde</h3>
+                        <img src="">
+                        <p></p>
+                    </div>
                     <div class="box-badge">
                         <h3>Badge UprisingMerde</h3>
                         <img src="">
@@ -92,40 +142,20 @@
                         <img src="">
                         <p></p>
                     </div>
+                    <div class="box-badge">
+                        <h3>Badge Pokecassé</h3>
+                        <img src="">
+                        <p></p>
+                    </div>
+                    <div class="box-badge">
+                        <h3>Badge Pokecassé</h3>
+                        <img src="">
+                        <p></p>
+                    </div>
                 </div>
             </li>
             <li>
                 <div class="scrollbar-badge">
-                    <div class="box-badge">
-                        <h3>Badge Mini-PasFini</h3>
-                        <img src="">
-                        <p></p>
-                    </div>
-                    <div class="box-badge">
-                        <h3>Badge Mini-PasFini</h3>
-                        <img src="">
-                        <p></p>
-                    </div>
-                    <div class="box-badge">
-                        <h3>Badge Mini-PasFini</h3>
-                        <img src="">
-                        <p></p>
-                    </div>
-                    <div class="box-badge">
-                        <h3>Badge Mini-PasFini</h3>
-                        <img src="">
-                        <p></p>
-                    </div>
-                    <div class="box-badge">
-                        <h3>Badge Mini-PasFini</h3>
-                        <img src="">
-                        <p></p>
-                    </div>
-                    <div class="box-badge">
-                        <h3>Badge Mini-PasFini</h3>
-                        <img src="">
-                        <p></p>
-                    </div>
                     <div class="box-badge">
                         <h3>Badge Mini-PasFini</h3>
                         <img src="">

@@ -1,7 +1,7 @@
 <?php
     @mysql_connect("localhost", "root", "");
     @mysql_select_db("multigaming");
-    $sql = "SELECT * FROM historique_points WHERE pseudo='" . $_SESSION['login'] . "'";
+    $sql = "SELECT * FROM historique_points WHERE pseudo='" . $_SESSION['login'] . "' ORDER BY time DESC";
     $req = @mysql_query($sql) or die('Erreur SQL !<br />'.$sql.'<br />'.mysql_error());
     $notifications = @mysql_num_rows($req);
 ?>

@@ -31,7 +31,7 @@ html, body {
     background-image: url("../img/bg.jpg");
 }
 
-p, h2, h3 {
+p, h2, h3, h5 {
     -webkit-margin-before: 0;
     -webkit-margin-after: 0;
 }
@@ -851,31 +851,33 @@ div.box-p {
     display: inline-block;
     vertical-align: top;
     border-radius: 5px;
-    /*border: 2px solid black;*/
-    background-color: rgb(80, 80, 80);
+    background-color: rgba(29, 134, 156, 0.62);
     color: white;
     text-align: center;
-    -webkit-box-shadow: inset 0px 0px 5px 1px rgba(27, 27, 27, 1);
-    -moz-box-shadow: inset 0px 0px 5px 1px rgba(27, 27, 27, 1);
-    box-shadow: inset 0px 0px 5px 1px rgba(27, 27, 27, 1);
+    -webkit-box-shadow: 0px 0px 7px 2px rgba(8, 8, 8, 0.6);
+    -moz-box-shadow: 0px 0px 7px 2px rgba(8, 8, 8, 0.6);
+    box-shadow: 0px 0px 7px 2px rgba(8, 8, 8, 0.6);
 }
 
 h2.title-p {
     padding: 15px 0;
     font-family: 'CaviarDreams';
     font-size: 18px;
+    color: rgb(226, 160, 35);
+    text-shadow: 1px 1px 2px rgba(21, 21, 21, 0.59);
 }
 
 .price-text {
     padding: 10px 0;
     font-family: 'CaviarDreams-Bold';
+    text-shadow: 1px 1px 2px #212121;
 }
 
 img.img-p {
     width: 100px;
-    -webkit-box-shadow: inset 0px 0px 5px 1px rgba(64, 64, 64, 1);
-    -moz-box-shadow: inset 0px 0px 5px 1px rgba(64, 64, 64, 1);
-    box-shadow: inset 0px 0px 5px 1px rgba(64, 64, 64, 1);
+    -webkit-box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.6);
+    -moz-box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.6);
+    box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.6);
     border-radius: 50px;
 }
 
@@ -904,19 +906,21 @@ button.bt-starpass {
 
 div.box-badge {
     margin: 15px;
-    height: 220px;
+    height: 250px;
     width: 200px;
     display: inline-block;
     vertical-align: top;
     border-radius: 5px;
-    border: 2px solid black;
     text-align: center;
+    border-radius: 5px;
+    background-color: rgba(29, 134, 156, 0.62);
+    -webkit-box-shadow: 0px 0px 7px 2px rgba(8, 8, 8, 0.6);
+    -moz-box-shadow: 0px 0px 7px 2px rgba(8, 8, 8, 0.6);
+    box-shadow: 0px 0px 7px 2px rgba(8, 8, 8, 0.6);
 }
 
 .badge_content {
     top: 10%;
-    background-color: white;
-    color: black;
     max-width: 1000px;
 }
 
@@ -925,12 +929,13 @@ div.box-badge {
     -webkit-margin-after: 0;
     text-align: center;
     color: white;
+    text-shadow: 1px 1px 2px #212121;
     font-family: 'champagne';
     margin-bottom: 10px;
 }
 
 .scrollbar-badge {
-    max-height: 520px;
+    height: 560px;
     overflow: auto;
     text-align: center;
 }
@@ -953,7 +958,6 @@ ul#tabs-badge {
 
 ul#tabs-badge li {
     display: inline-block;
-    background-color: rgba(82, 82, 82, 0.5);
     border-bottom: solid 2px rgba(160, 160, 160, 1);
     height: 50px;
     width: 24%;
@@ -967,8 +971,8 @@ ul#tabs-badge li {
     text-align: center;
 }
 
-ul#tabs-badge li:hover { background-color: rgba(66, 65, 65, 0.5); border-bottom: solid 2px white; }
-ul#tabs-badge li.active { background-color: rgba(66, 65, 65, 0.5); border-bottom: solid 2px rgba(225, 42, 42, 0.69); color: white; }
+ul#tabs-badge li:hover { border-bottom: solid 2px rgba(255, 255, 255, 0.68); }
+ul#tabs-badge li.active { border-bottom: solid 2px white; }
 
 ul#tab-badge {
     list-style-type: none;
@@ -983,11 +987,49 @@ ul#tab-badge li {
 
 ul#tab-badge li.active { display: block; }
 
-ul#tab-badge li h2 {
-    font-weight: 400;
-    margin-bottom: 30px;
-    padding-bottom: 5px;
+h3.title-badge {
+    padding: 10px 0;
+    font-family: 'CaviarDreams';
+    font-size: 18px;
+    color: rgb(226, 160, 35);
+    text-shadow: 1px 1px 2px rgba(21, 21, 21, 0.59);
 }
+
+img.img-badge {
+    margin: 6px 0;
+    width: 96px;
+    -webkit-box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.6);
+    -moz-box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.6);
+    box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.6);
+    border-radius: 50px;
+}
+
+p.desc-badge {
+    margin: 0 10px;
+    color: rgb(222, 222, 222);
+    font-family: 'champagne';
+}
+
+p.etat-badge {
+    font-size: 18px;
+    font-family: 'champagne';
+    margin-top: 18px;
+}
+
+.uk-progress {
+    background: rgba(93, 93, 93, 0.68);
+}
+
+.uk-progress-bar {
+    background: #BD990F;
+}
+
+.uk-progress-small {
+    height: 6px;
+    margin: 10px;
+}
+
+/* ---------------- [POPUP ENVOYER POINTS] ------------------- */
 
 .global-points {
     vertical-align: top;
@@ -1004,8 +1046,9 @@ ul#tab-badge li h2 {
 }
 
 .send-p_verticalbar {
-    border-left: 2px solid #A5A5A5;
+    border-left: 2px solid rgba(165, 165, 165, 0.55);
     height: 290px;
+    margin-top: 10px;
     float: left;
 }
 
@@ -1014,6 +1057,7 @@ h3.subtitle {
     padding-top: 10px;
     margin-bottom: 10px;
     font-family: 'CaviarDreams';
+    text-shadow: 1px 1px 2px #212121;
 }
 
 .historique_subtitle {
@@ -1076,3 +1120,83 @@ p.historique_points {
 
 .send-p_button:hover { box-shadow: 0 2px rgba(29, 134, 156, 0.75); transform: translateY(2px); }
 .send-p_button:active { box-shadow: 0 1px rgba(29, 134, 156, 0.75); transform: translateY(3px); }
+
+.del-notif_button {
+    border: 0;
+    padding: 8px;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 8px;
+    outline: none;
+    margin-top: 15px;
+    transition: box-shadow ease .1s;
+    font-family: 'champagne';
+    font-size: 18px;
+    width: 200px;
+    box-shadow: 0 3px rgba(181, 55, 55, 0.75);
+    background-color: rgb(214, 65, 65);
+}
+
+.del-notif_button:hover { box-shadow: 0 2px rgba(181, 55, 55, 0.75); transform: translateY(2px); }
+.del-notif_button:active { box-shadow: 0 1px rgba(181, 55, 55, 0.75); transform: translateY(3px); }
+
+.scrollbar-notif {
+    overflow: auto;
+    max-height: 280px;
+}
+
+div.box-vote {
+    margin: 10px;
+    height: 200px;
+    width: 170px;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 5px;
+    background-color: rgba(29, 134, 156, 0.62);
+    color: white;
+    text-align: center;
+    -webkit-box-shadow: 0px 0px 7px 2px rgba(8, 8, 8, 0.6);
+    -moz-box-shadow: 0px 0px 7px 2px rgba(8, 8, 8, 0.6);
+    box-shadow: 0px 0px 7px 2px rgba(8, 8, 8, 0.6);
+}
+
+.radial-progress {
+    margin: 10px auto !important;
+}
+
+.vote_content {
+    text-align: center;
+}
+
+.subtitle-vote {
+    padding: 10px 0;
+    font-family: 'CaviarDreams';
+    text-shadow: 1px 1px 2px #212121;
+}
+
+.desc-vote {
+    font-family: 'CaviarDreams';
+    text-align: center;
+    margin: 10px 0;
+}
+
+.img-vote-bt {
+    background: url('../img/vote.png');
+    width: 120px;
+    margin: 10px auto;
+    height: 120px;
+    border: none;
+    -webkit-box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.6);
+    -moz-box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.6);
+    box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.6);
+    border-radius: 80px;
+    outline: none;
+    cursor: pointer;
+}
+
+.img-vote-bt:hover {
+    -webkit-box-shadow: inset 0px 0px 7px 1px rgba(0,0,0,0.6);
+    -moz-box-shadow: inset 0px 0px 7px 1px rgba(0,0,0,0.6);
+    box-shadow: inset 0px 0px 7px 1px rgba(0,0,0,0.6);
+}

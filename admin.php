@@ -51,7 +51,8 @@ if (isset($_POST['go'])) {
 		$erreur = 'Au moins un des champs est vide.';
 	}
 	else {
-		$sql = 'INSERT INTO news VALUES("", "'.@mysql_escape_string($_SESSION['login']).'", "'.@mysql_escape_string($_POST['titre']).'", "'.date("Y-m-d H:i:s").'", "'.@mysql_escape_string($_POST['news']).'","'.$_POST['serveur'].'")';
+		$time_now = mktime(date("H"), date("i"), date("s"), date("m"), date("d"), date("Y"));
+		$sql = 'INSERT INTO news VALUES("", "'.@mysql_escape_string($_SESSION['login']).'", "'.@mysql_escape_string($_POST['titre']).'", "'. $time_now .'", "'.@mysql_escape_string($_POST['news']).'","'.$_POST['serveur'].'")';
 		@mysql_query($sql) or die('Erreur SQL !'.$sql.'<br />'.@mysql_error());
 		@mysql_close();
 		echo "news envoyée";
@@ -65,6 +66,7 @@ if (isset($_POST['go'])) {
     $base = @mysql_connect ('localhost', 'root', '');
     @mysql_select_db ('multigaming', $base);
 if (isset($_POST['notif_all']) && $_POST['notif_all']=='Poster la notif') {
+	$time_now = mktime(date("H"), date("i"), date("s"), date("m"), date("d"), date("Y"));
 	if (!isset($_POST['notif'])) {
 	$erreur = 'Les variables nécessaires au script ne sont pas définies.';
 	}
@@ -75,14 +77,14 @@ if (isset($_POST['notif_all']) && $_POST['notif_all']=='Poster la notif') {
 	else if ($_POST['pseudo'] == "all") {
 		$notification_envoie = @mysql_query ("SELECT pseudo FROM membres ");
 	    while ($data = @mysql_fetch_array($notification_envoie)){
-			    $sql = 'INSERT INTO notification VALUES("", "'.$data['pseudo'].'", "'.$_POST['notif'].'", "'.date("Y-m-d H:i:s").'")';
+			    $sql = 'INSERT INTO notification VALUES("", "'.$data['pseudo'].'", "'.$_POST['notif'].'", "'. $time_now .'")';
 				@mysql_query($sql) or die('Erreur SQL !'.$sql.'<br />'.@mysql_error());
 	        }
 	        echo "notification envoyée à tout le monde!";
 			@mysql_close();
 	        exit();
 	}else if ($_POST['pseudo'] != "all"){
-		$sql = 'INSERT INTO notification VALUES("", "'.$_POST['pseudo'].'", "'.$_POST['notif'].'", "'.date("Y-m-d H:i:s").'")';
+		$sql = 'INSERT INTO notification VALUES("", "'.$_POST['pseudo'].'", "'.$_POST['notif'].'", "'. $time_now .'")';
 		@mysql_query($sql) or die('Erreur SQL !'.$sql.'<br />'.@mysql_error());
 		echo "notification envoyée à " .$_POST['pseudo']. "";
 

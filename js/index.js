@@ -127,3 +127,9 @@ var auto_text_notif = setInterval(
   $("#refresh_text").load("include/popup/notification.php"); //Load the content into the div
   }), 1000);
 
+var auto_text_notif = setInterval(
+    (function () {
+    $("#refresh_vote").load("include/popup/vote.php"); //Load the content into the div
+}), 1000);
+
+

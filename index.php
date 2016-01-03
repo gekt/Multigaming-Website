@@ -13,12 +13,18 @@
     <head>
         <title>Accueil</title>
         <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.24.3/css/components/progress.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.24.3/css/components/progress.gradient.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.24.3/css/components/progress.almost-flat.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet/less" type="text/css" href="css/style.less">
         <script src="//code.jquery.com/jquery-1.10.2.js"></script>
         <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.24.3/js/uikit.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <script src="js/tabs.js"></script>
-        <script src="js/index.js"></script>        
+        <script src="js/index.js"></script>
+        <script src="js/less.min.js"></script>      
     </head>
     <body>
 
@@ -33,8 +39,11 @@
             }else{}
         ?>
 
-    <div class="modal-wrapper" data-modal="wrapper_notification"><div id="refresh_text" class="modal-content">
+    <div class="modal-wrapper" data-modal="wrapper_notification"><div id="refresh_text" style="text-align: center;" class="modal-content">
 </div></div>
+    <div class="modal-wrapper vote_popup" data-modal="wrapper_vote"><div class="modal-content" id="refresh_vote">
+    </div></div>
+
 <?php 
         include 'include/envoyer_points.php';
 ?>
@@ -69,12 +78,11 @@
         </div>
 
     <footer class="footer"> <!-- FOOTER DU SITE -->
-        <div class="copyright">Copyright Multigaming 2015 - 2016</div> <!-- TEXTE FOOTER DU SITE -->
+        <div class="copyright">Made with &hearts; | &copy; Multigaming 2015 - 2016</div> <!-- TEXTE FOOTER DU SITE -->
     </footer>
 
 <?php
     if (isset($_SESSION['login'])) {
-        include 'include/popup/vote.php';
         include 'include/popup/envoyerPoints.php';
         include 'include/popup/addPoints.php';
         include 'include/popup/badge.php';
